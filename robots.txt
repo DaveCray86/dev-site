@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://creighton-digital.com/sitemap.xml
