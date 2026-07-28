@@ -1,0 +1,262 @@
+CREIGHTON DIGITAL - PACKAGE DETAILS
+=====================================
+Use this document to explain packages clearly to clients.
+
++++++++++++++
+SUPPORT PRICING:
+Monthly Maintenance Plans (Best option)
+
+Plan:
+Basic: $79 – $99 Small text/image updates, security updates, minor bug fixes, monthly backups. Most clients. 
+Standard: $149 Everything in Basic + priority response + up to 1–2 hours of updates per month. Clients who change things often.
+Premium: $249 – $299 Higher priority + more update time + small ongoing improvements. Larger or more active sites/apps.
+
+Hourly Rate (for one-off work)
+Charge $85 – $100 per hour when someone just needs occasional help and doesn’t want a monthly plan.
+
+Important Tips
+
+Always be clear about what is included vs. what costs extra (new pages, new features, redesigns, etc. should be quoted separately).
+You can offer a small discount if they pay for 6 or 12 months upfront.
+For Android apps, support is usually a bit higher because fixes can take more time. You can charge the same rates or slightly more ($99–$175/month).
+=====================================
+WEBSITE PACKAGES
+=====================================
+
+-------------------------------------
+1. STARTER WEBSITE — $1,497
+-------------------------------------
+
+What is included:
+
+• 5-page professional website
+  You get a complete website with up to 5 pages.  
+  Typical pages include:
+  - Home
+  - About
+  - Services (or Products)
+  - Contact
+  - One extra page of your choice (FAQ, Testimonials, Gallery, etc.)
+
+• Mobile-friendly design
+  The website will look good and work properly on phones, tablets, and computers.  
+  Most people browse on their phone, so this is essential.
+
+• Contact form
+  A form on the website where visitors can send you messages.  
+  Messages will go to your email.
+
+• Domain + 1 year hosting
+  - Domain = the website address (example: yourbusiness.com)
+  - Hosting = the service that keeps your website online 24/7
+  
+  I will help you register the domain (or use one you already own) and set up hosting for the first year so the site stays live. After the first year, you will pay the renewal fees directly (usually $15–$40/year for the domain + $50–$150/year for hosting depending on the provider).
+
+• Basic SEO setup
+  SEO means Search Engine Optimization — making it easier for Google to find and understand your website.
+  
+  Basic SEO includes:
+  - Proper page titles and descriptions
+  - Clean website structure
+  - Setting up Google Analytics (so you can see how many people visit)
+  - Submitting the site to Google Search Console
+  - Making sure the site loads reasonably fast
+  
+  This does NOT include ongoing SEO work, blog writing, or advanced ranking campaigns.
+
+• 1 revision round
+  After I show you the first version of the website, you can request changes one time.  
+  This covers text changes, image swaps, small layout adjustments, etc.  
+  Major redesigns or adding many new pages are not included in the revision round.
+
+• 30 days support
+  For 30 days after the website goes live, I will fix any technical issues or small problems that come up at no extra cost.
+
+
+-------------------------------------
+2. GROWTH WEBSITE — $2,997  (Most Popular)
+-------------------------------------
+
+Everything in the Starter package, plus:
+
+• Up to 8 pages
+  More room for content (extra service pages, about page expansion, etc.)
+
+• Professional copywriting
+  I will write or heavily improve the text on the website so it sounds clear, professional, and persuasive.  
+  You still provide the key information and facts about your business.
+
+• Google Business Profile setup
+  I will create or optimize your Google Business Profile (the listing that shows up on Google Maps and local search).  
+  This helps local customers find you.
+
+• Lead capture system
+  In addition to a normal contact form, we can add simple ways to collect emails or quote requests (for example a “Get a Free Quote” form).
+
+• 2 revision rounds
+  You get two rounds of feedback and changes instead of one.
+
+• 45 days support
+  Longer post-launch support window.
+
+• 1 month of maintenance included
+  For the first month after launch, I will make small updates (text changes, adding a new photo, fixing small issues) at no extra charge.
+
+
+-------------------------------------
+3. PREMIUM WEBSITE — $4,997
+-------------------------------------
+
+Everything in the Growth package, plus:
+
+• Custom design
+  The design will be more unique and tailored to your brand instead of using a more standard layout.
+
+• Up to 12 pages
+  Significantly more content capacity.
+
+• Blog + first 3 posts
+  A blog section is added to the website, and I will write the first three posts for you.  
+  This helps with SEO and gives you a way to share updates.
+
+• Advanced SEO
+  Goes beyond basic setup. Includes better keyword targeting, improved page structure, image optimization, and stronger technical SEO foundations.
+
+• Email marketing setup
+  I will connect a simple email tool (such as Mailchimp or similar) so you can collect emails and send occasional updates or offers.
+
+• 60 days priority support
+  Longer and higher-priority support after launch.
+
+• 2 months of maintenance included
+  Two full months of small updates and fixes after the site goes live.
+
+
+
+=====================================
+ANDROID APP PACKAGES
+=====================================
+
+-------------------------------------
+1. STARTER APP — $4,500+
+-------------------------------------
+
+Best for simple apps with limited features.
+
+Includes:
+• Simple Android application
+  A functional Android app with a focused set of features.
+
+• Core features only
+  We stick to the essential functions needed for the app to work.  
+  Extra features increase the price.
+
+• Clean, modern UI
+  Professional-looking screens that are easy to use.
+
+• Basic backend if needed
+  If the app needs to store data or have user accounts, a simple backend can be included.
+
+• Google Play preparation
+  I will prepare the app so it is ready to submit to the Google Play Store (you will still need a Google Play Developer account, which costs $25 one-time).
+
+• Source code included
+  You receive the full code of the app so you own it completely.
+
+• 30 days support
+  Bug fixes and small adjustments for 30 days after delivery.
+
+
+-------------------------------------
+2. BUSINESS APP — $8,500+  (Recommended)
+-------------------------------------
+
+For more complete business applications.
+
+Includes everything in Starter App, plus:
+• Full-featured Android app
+  More screens and functionality.
+
+• User accounts / login
+  People can create accounts and log in.
+
+• Custom functionality
+  Features built specifically for your business needs.
+
+• API integrations
+  Connecting the app to other services (payment systems, CRMs, existing websites, etc.).
+
+• Admin panel (if needed)
+  A simple web dashboard so you can manage users, content, or data.
+
+• Google Play submission help
+  Guidance through the Play Store submission process.
+
+• 60 days support
+  Longer support period after delivery.
+
+
+-------------------------------------
+3. CUSTOM / ADVANCED APP — Custom Pricing
+-------------------------------------
+
+For larger or more complex projects.
+
+Typical features may include:
+• Complex applications with many features
+• Real-time features (chat, live updates, notifications)
+• Advanced third-party integrations
+• Larger databases and more sophisticated backend systems
+• Ongoing development after the initial version
+• iOS (iPhone) version available as an add-on
+• Priority support and dedicated communication
+
+Pricing is based on the exact scope of work after we discuss the project in detail.
+
+
+=====================================
+IMPORTANT NOTES FOR CLIENTS
+=====================================
+
+• Domain & Hosting Renewals
+  After the first year, domain and hosting fees are paid by the client directly to the providers. These are normal ongoing costs of having a website.
+
+• Content Responsibility
+  Clients are responsible for providing logos, photos, and key business information. I can help write or improve text, but the facts and brand materials need to come from the client.
+
+• Revisions
+  Revision rounds are for refining the work that was already agreed upon. They are not meant for adding major new features or completely changing direction.
+
+• Ownership
+  Once the project is paid in full and delivered, the client owns the website or app (including source code for apps).
+
+• Support vs Maintenance
+  - Support = fixing problems that shouldn’t be there
+  - Maintenance = making updates or small improvements after launch
+
+
+=====================================
+QUICK REFERENCE - WHAT CLIENTS ACTUALLY RECEIVE
+=====================================
+
+Starter Website ($1,497)
+→ Live 5-page website + domain setup + 1 year hosting + basic SEO + 30 days support
+
+Growth Website ($2,997)
+→ Better content, more pages, Google Business setup, lead forms, longer support + 1 month maintenance
+
+Premium Website ($4,997)
+→ Custom design, blog, stronger SEO, email setup, 2 months maintenance
+
+Starter App ($4,500+)
+→ Simple Android app + source code + Play Store prep + 30 days support
+
+Business App ($8,500+)
+→ Full business app with login, custom features, integrations + 60 days support
+
+Custom App
+→ Scoped and priced individually based on complexity
+
+
+Document prepared for Creighton Digital internal use.
+Last updated: July 28, 2026
