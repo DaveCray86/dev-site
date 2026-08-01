@@ -116,8 +116,8 @@
   <div class="container nav">
     <a href="#" class="logo">Creighton Digital</a>
     <ul class="nav-links">
-      <li><a href="#packages">Packages</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#packages">Packages</a></li>
       <li><a href="#contact" class="btn btn-sm" onclick="openContactModal();return false;">Get in Touch</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -126,8 +126,8 @@
 
 <div class="mobile-nav" id="mobileNav">
   <button class="close-btn" id="closeNav">×</button>
-  <a href="#packages" class="mobile-link">Packages</a>
   <a href="#work" class="mobile-link">Work</a>
+  <a href="#packages" class="mobile-link">Packages</a>
   <a href="#contact" class="mobile-link" onclick="openContactModal()">Get in Touch</a>
 </div>
 
@@ -136,8 +136,82 @@
     <h1>Websites & Android apps<br>built for real results.</h1>
     <p>Done-for-you professional websites and custom mobile apps. Clear packages, clean design, and direct communication.</p>
     <div class="hero-btns">
-      <a href="#packages" class="btn">View Packages</a>
-      <a href="#work" class="btn btn-outline">See My Work</a>
+      <a href="#work" class="btn">See My Work</a>
+      <a href="#packages" class="btn btn-outline">View Packages</a>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h2>Examples of my work</h2>
+    <p class="section-sub">Real Android apps I’ve built, plus sample websites that show the range of styles I can deliver.</p>
+
+    <!-- Apps -->
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="video-wrap">
+          <video class="app-video" controls playsinline preload="metadata" poster="images/cicada/01-portfolio.jpg">
+            <source src="images/cicada/cicada-demo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="phone-row">
+          <img src="images/cicada/01-portfolio.jpg" alt="Cicada Portfolio">
+          <img src="images/cicada/05-signals.jpg" alt="Cicada Signals">
+          <img src="images/cicada/03-equity-curve.jpg" alt="Cicada Equity Curve">
+          <img src="images/cicada/04-backtest.jpg" alt="Cicada Backtest">
+        </div>
+        <div class="work-card-body">
+          <span class="tag tag-app">Android App</span>
+          <h3>Cicada</h3>
+          <p>Algorithmic trading app with live portfolio tracking, signal generation, backtesting lab, risk management, and performance intelligence. Built with Kotlin + Alpaca.</p>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="video-wrap">
+          <video class="app-video" controls playsinline preload="metadata" poster="images/responder-strong/01-home.jpg">
+            <source src="images/responder-strong/responder-strong-demo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="phone-row">
+          <img src="images/responder-strong/01-home.jpg" alt="Responder Strong Home">
+          <img src="images/responder-strong/02-session.jpg" alt="Responder Strong Session">
+          <img src="images/responder-strong/04-readiness.jpg" alt="Responder Strong Readiness">
+          <img src="images/responder-strong/03-history.jpg" alt="Responder Strong History">
+        </div>
+        <div class="work-card-body">
+          <span class="tag tag-app">Android App</span>
+          <h3>Responder Strong</h3>
+          <p>Strength training app designed for first responders. 5/3/1 programming, readiness tracking, training maxes, session history, and role-based profiles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sample Websites -->
+    <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px">Sample Websites</h3>
+    <div class="samples-row">
+      <div class="sample-card">
+        <h4>Bella Notte</h4>
+        <p>Italian restaurant — elegant, editorial style</p>
+        <a href="/samples/restaurant.html" target="_blank">View sample →</a>
+      </div>
+      <div class="sample-card">
+        <h4>Apex Plumbing</h4>
+        <p>Service business — high-conversion layout</p>
+        <a href="/samples/plumber.html" target="_blank">View sample →</a>
+      </div>
+      <div class="sample-card">
+        <h4>Forge Fitness</h4>
+        <p>Training brand — dark, athletic, video hero</p>
+        <a href="/samples/fitness.html" target="_blank">View sample →</a>
+      </div>
+      <div class="sample-card">
+        <h4>Harper & Co.</h4>
+        <p>Real estate — premium, refined design</p>
+        <a href="/samples/real-estate.html" target="_blank">View sample →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -241,80 +315,6 @@
           </ul>
           <button class="btn btn-outline" style="width:100%" onclick="openContactModal()">Get Quote</button>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="work">
-  <div class="container">
-    <div class="section-label">Portfolio</div>
-    <h2>Examples of my work</h2>
-    <p class="section-sub">Real Android apps I’ve built, plus sample websites that show the range of styles I can deliver.</p>
-
-    <!-- Apps -->
-    <div class="work-grid">
-      <div class="work-card">
-        <div class="video-wrap">
-          <video class="app-video" controls playsinline preload="metadata" poster="images/cicada/01-portfolio.jpg">
-            <source src="images/cicada/cicada-demo.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="phone-row">
-          <img src="images/cicada/01-portfolio.jpg" alt="Cicada Portfolio">
-          <img src="images/cicada/05-signals.jpg" alt="Cicada Signals">
-          <img src="images/cicada/03-equity-curve.jpg" alt="Cicada Equity Curve">
-          <img src="images/cicada/04-backtest.jpg" alt="Cicada Backtest">
-        </div>
-        <div class="work-card-body">
-          <span class="tag tag-app">Android App</span>
-          <h3>Cicada</h3>
-          <p>Algorithmic trading app with live portfolio tracking, signal generation, backtesting lab, risk management, and performance intelligence. Built with Kotlin + Alpaca.</p>
-        </div>
-      </div>
-
-      <div class="work-card">
-        <div class="video-wrap">
-          <video class="app-video" controls playsinline preload="metadata" poster="images/responder-strong/01-home.jpg">
-            <source src="images/responder-strong/responder-strong-demo.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="phone-row">
-          <img src="images/responder-strong/01-home.jpg" alt="Responder Strong Home">
-          <img src="images/responder-strong/02-session.jpg" alt="Responder Strong Session">
-          <img src="images/responder-strong/04-readiness.jpg" alt="Responder Strong Readiness">
-          <img src="images/responder-strong/03-history.jpg" alt="Responder Strong History">
-        </div>
-        <div class="work-card-body">
-          <span class="tag tag-app">Android App</span>
-          <h3>Responder Strong</h3>
-          <p>Strength training app designed for first responders. 5/3/1 programming, readiness tracking, training maxes, session history, and role-based profiles.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sample Websites -->
-    <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px">Sample Websites</h3>
-    <div class="samples-row">
-      <div class="sample-card">
-        <h4>Bella Notte</h4>
-        <p>Italian restaurant — elegant, editorial style</p>
-        <a href="samples/restaurant.html" target="_blank">View sample →</a>
-      </div>
-      <div class="sample-card">
-        <h4>Apex Plumbing</h4>
-        <p>Service business — high-conversion layout</p>
-        <a href="samples/plumber.html" target="_blank">View sample →</a>
-      </div>
-      <div class="sample-card">
-        <h4>Forge Fitness</h4>
-        <p>Training brand — dark, athletic, video hero</p>
-        <a href="samples/fitness.html" target="_blank">View sample →</a>
-      </div>
-      <div class="sample-card">
-        <h4>Harper & Co.</h4>
-        <p>Real estate — premium, refined design</p>
-        <a href="samples/real-estate.html" target="_blank">View sample →</a>
       </div>
     </div>
   </div>
