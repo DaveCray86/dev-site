@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forge Fitness | Strength Training & Coaching</title>
+  <meta name="description" content="Personalized strength training and coaching. Real programs, real accountability, real results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:#fafafa;line-height:1.6;background:#0a0a0a}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+    header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:.3s}
+    header.scrolled{background:rgba(10,10,10,.95);padding:14px 0;border-bottom:1px solid #222}
+    .nav{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.5rem;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-1px}
+    .logo span{color:#a3e635}
+    .nav-links{display:flex;gap:32px;list-style:none}
+    .nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-weight:500;font-size:.95rem;transition:.2s}
+    .nav-links a:hover{color:#a3e635}
+
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+    .hamburger span{display:block;width:24px;height:2px;background:#fff;margin:6px 0}
+    .mobile-nav{display:none;position:fixed;inset:0;background:#0a0a0a;z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:32px}
+    .mobile-nav.active{display:flex}
+    .mobile-nav a{color:#fff;text-decoration:none;font-size:1.5rem;font-weight:700}
+    .mobile-nav .close-btn{position:absolute;top:24px;right:28px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+
+    /* Video Hero */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .hero-fallback{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80') center/cover;z-index:0}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,.85) 0%,rgba(10,10,10,.55) 60%,rgba(10,10,10,.4) 100%);z-index:1}
+    .hero-content{position:relative;z-index:2;padding:140px 0 100px;max-width:600px}
+    .hero h1{font-size:clamp(3rem,7vw,4.8rem);font-weight:900;line-height:1.05;margin-bottom:20px;letter-spacing:-2px}
+    .hero h1 span{color:#a3e635}
+    .hero p{font-size:1.2rem;color:#a3a3a3;margin-bottom:36px;max-width:420px}
+    .btn{display:inline-block;background:#a3e635;color:#0a0a0a;padding:16px 36px;border-radius:4px;text-decoration:none;font-weight:800;font-size:1rem;border:none;cursor:pointer;transition:.2s;letter-spacing:-.3px}
+    .btn:hover{background:#84cc16;transform:translateY(-2px)}
+    .btn-outline{background:transparent;border:2px solid #fff;color:#fff;margin-left:12px}
+    .btn-outline:hover{background:#fff;color:#0a0a0a}
+
+    .fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+
+    .stats{background:#111;border-top:1px solid #222;border-bottom:1px solid #222;padding:36px 0}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+    .stat-num{font-size:2.2rem;font-weight:900;color:#a3e635;line-height:1}
+    .stat-label{font-size:.85rem;color:#737373;margin-top:6px;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+
+    section{padding:90px 0}
+    h2{font-size:2.4rem;font-weight:900;text-align:center;margin-bottom:12px;letter-spacing:-1px}
+    .section-sub{text-align:center;color:#737373;max-width:480px;margin:0 auto 48px}
+
+    .programs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .program{background:#141414;border:1px solid #222;border-radius:8px;padding:32px 26px;transition:.2s}
+    .program:hover{border-color:#a3e635}
+    .program.featured{background:#a3e635;color:#0a0a0a;border-color:#a3e635}
+    .program.featured p,.program.featured li{color:#333}
+    .tag{display:inline-block;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:3px;margin-bottom:14px;background:#222;color:#a3e635}
+    .program.featured .tag{background:#0a0a0a;color:#a3e635}
+    .program h3{font-size:1.35rem;font-weight:800;margin-bottom:10px}
+    .program p{color:#a3a3a3;font-size:.92rem;margin-bottom:16px}
+    .program ul{list-style:none;margin-bottom:20px}
+    .program li{padding:5px 0;font-size:.9rem;color:#a3a3a3}
+    .program li::before{content:"→ ";color:#a3e635;font-weight:700}
+    .program.featured li::before{color:#0a0a0a}
+    .price{font-size:1.8rem;font-weight:900;margin-bottom:4px}
+    .price span{font-size:.9rem;font-weight:500;color:#737373}
+    .program.featured .price span{color:#333}
+
+    .plans{background:#111}
+    .plan-card{background:#0a0a0a;border:1px solid #222;border-radius:8px;padding:32px;margin-bottom:28px}
+    .plan-card h3{font-size:1.3rem;font-weight:800;margin-bottom:8px;color:#a3e635}
+    .plan-card>p{color:#737373;margin-bottom:20px;font-size:.95rem}
+    .days{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+    .day{background:#141414;border-radius:6px;padding:16px}
+    .day h4{font-size:.9rem;font-weight:700;margin-bottom:8px;color:#fff}
+    .day ul{list-style:none;font-size:.82rem;color:#a3a3a3}
+    .day li{padding:2px 0}
+
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:900px;margin:0 auto}
+    .form-group{margin-bottom:16px}
+    .form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:#a3a3a3}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;background:#141414;border:1px solid #333;border-radius:4px;color:#fff;font-size:1rem;font-family:inherit}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:#a3e635}
+    .form-group textarea{min-height:110px;resize:vertical}
+    .form-success{display:none;background:#14532d;border:1px solid #22c55e;color:#bbf7d0;padding:20px;border-radius:4px;text-align:center}
+    .form-success.show{display:block}
+    .form-error{color:#f87171;font-size:.8rem;margin-top:4px;display:none}
+
+    .sample-note{background:#000;color:#737373;text-align:center;padding:32px 24px;font-size:.95rem;border-top:1px solid #222}
+    .sample-note strong{color:#fff}
+    .sample-note a{color:#a3e635;text-decoration:none;font-weight:600}
+    .sample-note a:hover{text-decoration:underline}
+    footer{background:#000;color:#525252;text-align:center;padding:24px;font-size:.88rem}
+
+    @media(max-width:800px){
+      .nav-links{display:none}.hamburger{display:block}
+      .stats-grid{grid-template-columns:1fr 1fr;gap:28px}
+      .programs,.contact-grid{grid-template-columns:1fr}
+      .btn-outline{margin-left:0;margin-top:12px;display:inline-block}
+    }
+  </style>
+</head>
+<body>
+<header id="header">
+  <div class="container nav">
+    <a href="#" class="logo">FORGE<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#plans">Plans</a></li>
+      <li><a href="#contact">Start</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="closeNav">×</button>
+  <a href="#programs" class="mobile-link">Programs</a>
+  <a href="#plans" class="mobile-link">Plans</a>
+  <a href="#contact" class="mobile-link">Start</a>
+</div>
+
+<section class="hero">
+  <div class="hero-fallback"></div>
+  <video class="hero-video" autoplay muted loop playsinline poster="">
+    <source src="fitness-hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1>STRENGTH.<br><span>DISCIPLINE.</span><br>RESULTS.</h1>
+      <p>Personalized training programs built for people who are done with half-measures.</p>
+      <a href="#contact" class="btn">START TRAINING</a>
+      <a href="#programs" class="btn btn-outline">VIEW PROGRAMS</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div><div class="stat-num">500+</div><div class="stat-label">Clients</div></div>
+      <div><div class="stat-num">12</div><div class="stat-label">Years</div></div>
+      <div><div class="stat-num">98%</div><div class="stat-label">Satisfaction</div></div>
+      <div><div class="stat-num">24/7</div><div class="stat-label">Access</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="container">
+    <h2 class="fade-in">PROGRAMS</h2>
+    <p class="section-sub fade-in">Pick the level of coaching that matches how serious you are.</p>
+    <div class="programs fade-in">
+      <div class="program">
+        <div class="tag">Starter</div>
+        <h3>Foundation</h3>
+        <p>For people just getting serious about training.</p>
+        <ul><li>Custom workout plan</li><li>Form guidance</li><li>Monthly check-ins</li><li>Email support</li></ul>
+        <div class="price">$149 <span>/mo</span></div>
+      </div>
+      <div class="program featured">
+        <div class="tag">Most Popular</div>
+        <h3>Performance</h3>
+        <p>Full coaching for people who want real progress.</p>
+        <ul><li>Weekly check-ins</li><li>Nutrition guidance</li><li>Progressive programming</li><li>Priority support</li></ul>
+        <div class="price">$299 <span>/mo</span></div>
+      </div>
+      <div class="program">
+        <div class="tag">Elite</div>
+        <h3>1-on-1</h3>
+        <p>Maximum attention. Maximum results.</p>
+        <ul><li>Multiple sessions/week</li><li>Full nutrition plan</li><li>Direct coach access</li><li>Habit systems</li></ul>
+        <div class="price">$499 <span>/mo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plans" class="plans">
+  <div class="container">
+    <h2 class="fade-in">SAMPLE PLANS</h2>
+    <p class="section-sub fade-in">Examples of the structured programming clients receive.</p>
+    <div class="plan-card fade-in">
+      <h3>Strength Foundation — 4 Day Split</h3>
+      <p>Beginner-friendly. Focus on form, consistency, and progressive overload.</p>
+      <div class="days">
+        <div class="day"><h4>Day 1 — Lower</h4><ul><li>Goblet Squat 3×10</li><li>RDL 3×10</li><li>Leg Press 3×12</li><li>Calf Raise 3×15</li></ul></div>
+        <div class="day"><h4>Day 2 — Upper</h4><ul><li>Push-ups 3×10</li><li>DB Row 3×10</li><li>OH Press 3×10</li><li>Face Pulls 3×15</li></ul></div>
+        <div class="day"><h4>Day 3 — Full</h4><ul><li>Trap Bar DL 3×8</li><li>Bench 3×10</li><li>Lat Pulldown 3×12</li><li>Plank 3×30s</li></ul></div>
+        <div class="day"><h4>Day 4 — Cond.</h4><ul><li>Farmer Carries</li><li>Sled Pushes</li><li>Bike Intervals</li><li>Core Circuit</li></ul></div>
+      </div>
+    </div>
+    <div class="plan-card fade-in">
+      <h3>Hypertrophy Performance — 5 Day</h3>
+      <p>Intermediate. Higher volume for muscle and strength.</p>
+      <div class="days">
+        <div class="day"><h4>Push</h4><ul><li>Bench 4×6-8</li><li>Incline DB 3×10</li><li>OH Press 3×8</li><li>Triceps 3×12</li></ul></div>
+        <div class="day"><h4>Pull</h4><ul><li>Weighted Pullups 4×6</li><li>Barbell Row 4×8</li><li>Face Pulls 3×15</li><li>Curls 3×12</li></ul></div>
+        <div class="day"><h4>Legs</h4><ul><li>Back Squat 4×6</li><li>RDL 3×8</li><li>Lunges 3×10</li><li>Leg Curl 3×12</li></ul></div>
+        <div class="day"><h4>Upper / Arms</h4><ul><li>Close-Grip Bench</li><li>Chest-Supp Row</li><li>Lateral Raises</li><li>Arm Superset</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="fade-in">READY?</h2>
+    <p class="section-sub fade-in">Book a free consult. We’ll map out the right plan for your goals.</p>
+    <div class="contact-grid fade-in">
+      <div>
+        <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:14px">What happens next</h3>
+        <p style="color:#737373;margin-bottom:12px">We talk about your goals, experience, and schedule. You get a clear recommendation — no pressure, no fluff.</p>
+        <p style="color:#737373">Just a plan that actually fits.</p>
+      </div>
+      <div>
+        <form id="contactForm">
+          <div class="form-group"><label>Name</label><input type="text" id="name" required><div class="form-error" id="nameError">Required</div></div>
+          <div class="form-group"><label>Email</label><input type="email" id="email" required><div class="form-error" id="emailError">Valid email required</div></div>
+          <div class="form-group"><label>Primary Goal</label>
+            <select id="goal"><option>Build Muscle</option><option>Lose Fat</option><option>Get Stronger</option><option>General Fitness</option></select>
+          </div>
+          <div class="form-group"><label>Anything else?</label><textarea id="message"></textarea></div>
+          <button type="submit" class="btn" style="width:100%">REQUEST CONSULT</button>
+        </form>
+        <div class="form-success" id="formSuccess"><strong>Request received.</strong><br>We’ll be in touch shortly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sample-note">
+  <strong>Like what you see?</strong> This is a sample website built by <strong>Creighton Digital</strong>.<br>
+  Email <a href="mailto:CreightonDigital@gmail.com">CreightonDigital@gmail.com</a> for more information.
+</div>
+<footer><p>© 2026 Forge Fitness</p></footer>
+
+<script>
+  const header=document.getElementById('header');
+  window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>50));
+  document.getElementById('hamburger').onclick=()=>document.getElementById('mobileNav').classList.add('active');
+  document.getElementById('closeNav').onclick=()=>document.getElementById('mobileNav').classList.remove('active');
+  document.querySelectorAll('.mobile-link').forEach(l=>l.onclick=()=>document.getElementById('mobileNav').classList.remove('active'));
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+  // Hide video if it fails to load, keep fallback image
+  const vid=document.querySelector('.hero-video');
+  if(vid){vid.addEventListener('error',()=>{vid.style.display='none'})}
+  document.getElementById('contactForm').onsubmit=e=>{
+    e.preventDefault();
+    let v=true;
+    document.getElementById('nameError').style.display='none';
+    document.getElementById('emailError').style.display='none';
+    if(!document.getElementById('name').value.trim()){document.getElementById('nameError').style.display='block';v=false}
+    if(!document.getElementById('email').value.includes('@')){document.getElementById('emailError').style.display='block';v=false}
+    if(v){document.getElementById('contactForm').style.display='none';document.getElementById('formSuccess').classList.add('show')}
+  };
+</script>
+</body>
+</html>

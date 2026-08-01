@@ -3,351 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PESH4CJ1KG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PESH4CJ1KG');
-  </script>
-
-  <!-- Primary SEO -->
-  <title>Creighton Digital | Professional Websites & Android Apps</title>
-  <meta name="description" content="I build clean, professional websites and Android apps for businesses. Fully done-for-you service — design, development, and launch. Available worldwide.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://creighton-digital.com/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Creighton Digital | Professional Websites & Android Apps">
-  <meta property="og:description" content="I build clean, professional websites and Android apps for businesses. Fully done-for-you service — design, development, and launch.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://creighton-digital.com/">
-  <meta property="og:site_name" content="Creighton Digital">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Creighton Digital | Professional Websites & Android Apps">
-  <meta name="twitter:description" content="I build clean, professional websites and Android apps for businesses. Fully done-for-you service.">
-
+  <title>Creighton Digital | Websites & Android Apps</title>
+  <meta name="description" content="Done-for-you professional websites and custom Android apps. Clean design, clear pricing, worldwide.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      line-height: 1.6;
-      color: #1a1a1a;
-      background: #ffffff;
-    }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    
-    header {
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
-    }
-    .logo { font-weight: 700; font-size: 1.25rem; color: #0f172a; }
-    
-    .hero {
-      padding: 80px 0 60px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-      color: #0f172a;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #475569;
-      max-width: 640px;
-      margin: 0 auto 32px;
-    }
-    .btn {
-      display: inline-block;
-      background: #0f172a;
-      color: white;
-      padding: 14px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: background 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-    .btn:hover { background: #1e293b; }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #0f172a;
-      color: #0f172a;
-      margin-left: 12px;
-    }
-    .btn-outline:hover { background: #0f172a; color: white; }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:#111;line-height:1.6;background:#fff}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
 
-    section { padding: 70px 0; }
-    h2 {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-    .section-sub {
-      text-align: center;
-      color: #64748b;
-      max-width: 580px;
-      margin: 0 auto 48px;
-    }
+    /* Header */
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #eee;padding:16px 0}
+    .nav{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.25rem;font-weight:800;color:#111;text-decoration:none;letter-spacing:-.5px}
+    .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+    .nav-links a{color:#444;text-decoration:none;font-size:.9rem;font-weight:500;transition:.2s}
+    .nav-links a:hover{color:#111}
+    .btn{display:inline-block;background:#111;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.9rem;border:none;cursor:pointer;transition:.2s}
+    .btn:hover{background:#333}
+    .btn-outline{background:transparent;border:1.5px solid #111;color:#111}
+    .btn-outline:hover{background:#111;color:#fff}
+    .btn-sm{padding:9px 18px;font-size:.85rem}
 
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .package {
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 32px 28px;
-      background: #fff;
-      position: relative;
-    }
-    .package.popular {
-      border: 2px solid #0f172a;
-    }
-    .popular-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0f172a;
-      color: white;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 4px 14px;
-      border-radius: 20px;
-    }
-    .package h3 { font-size: 1.35rem; margin-bottom: 8px; }
-    .price {
-      font-size: 2.1rem;
-      font-weight: 700;
-      margin: 12px 0 20px;
-    }
-    .price span { font-size: 0.95rem; font-weight: 500; color: #64748b; }
-    .package ul {
-      list-style: none;
-      margin-bottom: 28px;
-    }
-    .package li {
-      padding: 7px 0;
-      font-size: 0.95rem;
-      color: #334155;
-    }
-    .package li::before {
-      content: "✓ ";
-      color: #16a34a;
-      font-weight: 700;
-    }
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+    .hamburger span{display:block;width:22px;height:2px;background:#111;margin:5px 0}
+    .mobile-nav{display:none;position:fixed;inset:0;background:#111;z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:28px}
+    .mobile-nav.active{display:flex}
+    .mobile-nav a{color:#fff;text-decoration:none;font-size:1.3rem;font-weight:600}
+    .mobile-nav .close-btn{position:absolute;top:22px;right:26px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 32px;
-      text-align: center;
-    }
-    .step-num {
-      width: 42px;
-      height: 42px;
-      background: #0f172a;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      margin: 0 auto 14px;
-    }
+    /* Hero */
+    .hero{padding:140px 0 90px;text-align:center}
+    .hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:800;letter-spacing:-1.5px;line-height:1.15;margin-bottom:18px}
+    .hero p{font-size:1.15rem;color:#555;max-width:540px;margin:0 auto 32px}
+    .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-    .faq-item {
-      border-bottom: 1px solid #e2e8f0;
-      padding: 22px 0;
-    }
-    .faq-item h4 { font-size: 1.1rem; margin-bottom: 8px; }
-    .faq-item p { color: #475569; }
+    /* Sections */
+    section{padding:80px 0}
+    .section-label{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#888;margin-bottom:10px}
+    h2{font-size:2rem;font-weight:800;letter-spacing:-.8px;margin-bottom:12px}
+    .section-sub{color:#666;max-width:520px;margin-bottom:48px}
 
-    .cta {
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 70px 24px;
-      border-radius: 16px;
-      margin: 40px 0;
-    }
-    .cta h2 { color: white; }
-    .cta p { color: #cbd5e1; margin-bottom: 28px; }
-    .cta .btn { background: white; color: #0f172a; }
-    .cta .btn:hover { background: #f1f5f9; }
+    /* Packages */
+    .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .pkg{border:1px solid #e5e5e5;border-radius:10px;padding:28px 24px;transition:.2s}
+    .pkg:hover{border-color:#111;box-shadow:0 8px 30px rgba(0,0,0,.06)}
+    .pkg.featured{border-color:#111;background:#111;color:#fff}
+    .pkg.featured .pkg-price,.pkg.featured p,.pkg.featured li{color:#ccc}
+    .pkg.featured .pkg-price strong{color:#fff}
+    .pkg-name{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:#888}
+    .pkg.featured .pkg-name{color:#aaa}
+    .pkg-price{font-size:1.8rem;font-weight:800;margin-bottom:6px}
+    .pkg-price strong{font-size:1.8rem}
+    .pkg p{font-size:.9rem;color:#666;margin-bottom:18px}
+    .pkg ul{list-style:none;margin-bottom:24px}
+    .pkg li{padding:5px 0;font-size:.9rem;color:#444}
+    .pkg li::before{content:"✓ ";font-weight:700}
+    .pkg.featured li::before{color:#fff}
 
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      color: #64748b;
-      font-size: 0.9rem;
-    }
+    /* Portfolio */
+    .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px}
+    .work-card{border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;transition:.25s}
+    .work-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-3px)}
+    .work-card-body{padding:24px}
+    .work-card h3{font-size:1.25rem;font-weight:700;margin-bottom:6px}
+    .work-card .tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 10px;border-radius:4px;margin-bottom:12px}
+    .tag-app{background:#111;color:#fff}
+    .tag-web{background:#f0f0f0;color:#444}
+    .work-card p{font-size:.92rem;color:#555;margin-bottom:16px}
+    .phone-row{display:flex;gap:10px;overflow-x:auto;padding:16px 16px 8px;background:#f8f8f8;scrollbar-width:thin}
+    .phone-row img{height:220px;width:auto;border-radius:10px;flex-shrink:0;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+    .app-video{width:100%;max-height:420px;object-fit:contain;background:#000;display:block}
+    .video-wrap{background:#000;border-radius:0}
 
-    /* Modal Styles */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      padding: 20px;
-    }
-    .modal-overlay.active {
-      display: flex;
-    }
-    .modal {
-      background: white;
-      border-radius: 12px;
-      padding: 36px 32px;
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      position: relative;
-    }
-    .modal h3 {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-      color: #0f172a;
-    }
-    .modal p {
-      color: #64748b;
-      margin-bottom: 24px;
-      font-size: 0.95rem;
-    }
-    .email-display {
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 14px 16px;
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: #0f172a;
-      margin-bottom: 20px;
-      word-break: break-all;
-    }
-    .modal-buttons {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-    }
-    .modal .btn {
-      flex: 1;
-      max-width: 160px;
-    }
-    .btn-copy {
-      background: #0f172a;
-    }
-    .btn-close {
-      background: #e2e8f0;
-      color: #0f172a;
-    }
-    .btn-close:hover {
-      background: #cbd5e1;
-    }
-    .copy-feedback {
-      margin-top: 14px;
-      font-size: 0.9rem;
-      color: #16a34a;
-      height: 20px;
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    .copy-feedback.show {
-      opacity: 1;
-    }
-    .close-x {
-      position: absolute;
-      top: 14px;
-      right: 18px;
-      background: none;
-      border: none;
-      font-size: 1.4rem;
-      color: #94a3b8;
-      cursor: pointer;
-      line-height: 1;
-    }
-    .close-x:hover {
-      color: #0f172a;
-    }
+    .samples-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .sample-card{border:1px solid #e5e5e5;border-radius:10px;padding:20px;text-align:center;transition:.2s}
+    .sample-card:hover{border-color:#111}
+    .sample-card h4{font-size:1rem;font-weight:700;margin-bottom:4px}
+    .sample-card p{font-size:.82rem;color:#666;margin-bottom:14px}
+    .sample-card a{font-size:.85rem;font-weight:600;color:#111;text-decoration:none}
+    .sample-card a:hover{text-decoration:underline}
 
-    @media (max-width: 700px) {
-      .btn-outline { margin-left: 0; margin-top: 12px; display: inline-block; }
-      .modal-buttons { flex-direction: column; }
-      .modal .btn { max-width: 100%; }
+    /* Contact */
+    .contact-box{max-width:480px;margin:0 auto;text-align:center}
+    .contact-box p{color:#555;margin-bottom:24px}
+
+    /* Modal */
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:center;justify-content:center;padding:24px}
+    .modal-overlay.active{display:flex}
+    .modal{background:#fff;border-radius:12px;padding:36px 32px;max-width:400px;width:100%;text-align:center;position:relative}
+    .modal h3{font-size:1.3rem;font-weight:700;margin-bottom:8px}
+    .modal p{color:#666;font-size:.95rem;margin-bottom:20px}
+    .email-display{background:#f5f5f5;border:1px solid #e0e0e0;border-radius:8px;padding:14px;font-size:1.05rem;font-weight:600;margin-bottom:16px;word-break:break-all}
+    .btn-copy{width:100%}
+    .copy-feedback{display:none;color:#16a34a;font-size:.85rem;font-weight:600;margin-top:12px}
+    .copy-feedback.show{display:block}
+    .close-x{position:absolute;top:14px;right:18px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#999}
+
+    footer{border-top:1px solid #eee;padding:28px 0;text-align:center;color:#888;font-size:.88rem}
+
+    @media(max-width:900px){
+      .packages,.work-grid,.samples-row{grid-template-columns:1fr}
+      .nav-links{display:none}.hamburger{display:block}
+      .phone-row img{height:180px}
     }
   </style>
 </head>
 <body>
-
 <header>
-  <div class="container">
-    <div class="logo">Creighton Digital</div>
+  <div class="container nav">
+    <a href="#" class="logo">Creighton Digital</a>
+    <ul class="nav-links">
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact" class="btn btn-sm" onclick="openContactModal();return false;">Get in Touch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="closeNav">×</button>
+  <a href="#packages" class="mobile-link">Packages</a>
+  <a href="#work" class="mobile-link">Work</a>
+  <a href="#contact" class="mobile-link" onclick="openContactModal()">Get in Touch</a>
+</div>
+
 <section class="hero">
   <div class="container">
-    <h1>Websites & Mobile Apps<br>Done For You</h1>
-    <p>Clean, professional websites and Android apps built from start to finish. I handle the technical side so you can focus on your business. Available worldwide.</p>
-    <a href="#packages" class="btn">View Packages</a>
-    <button class="btn btn-outline" onclick="openContactModal()">Email Me</button>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>What I Build</h2>
-    <p class="section-sub">Simple, reliable digital products that help businesses look professional and get results.</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; text-align: center; margin-top: 20px;">
-      <div>
-        <h3 style="margin-bottom: 10px;">Websites</h3>
-        <p style="color: #475569;">Modern, mobile-friendly websites designed to build trust and generate leads.</p>
-      </div>
-      <div>
-        <h3 style="margin-bottom: 10px;">Android Apps</h3>
-        <p style="color: #475569;">Custom Android applications built with clean code and practical features.</p>
-      </div>
-      <div>
-        <h3 style="margin-bottom: 10px;">iOS Apps</h3>
-        <p style="color: #475569;">iPhone apps available on request (coming soon as a standard offering).</p>
-      </div>
+    <h1>Websites & Android apps<br>built for real results.</h1>
+    <p>Done-for-you professional websites and custom mobile apps. Clear packages, clean design, and direct communication.</p>
+    <div class="hero-btns">
+      <a href="#packages" class="btn">View Packages</a>
+      <a href="#work" class="btn btn-outline">See My Work</a>
     </div>
   </div>
 </section>
 
-<section id="packages" style="background: #f8fafc;">
+<section id="packages" style="background:#fafafa">
   <div class="container">
-    <h2>Website Packages</h2>
-    <p class="section-sub">Everything is handled for you — design, content, hosting setup, and launch.</p>
-
+    <div class="section-label">Website Packages</div>
+    <h2>Professional websites, done for you</h2>
+    <p class="section-sub">Choose the package that fits your needs. Every site is mobile-friendly, fast, and built to convert.</p>
     <div class="packages">
-      <div class="package">
-        <h3>Starter Website</h3>
-        <div class="price">$1,497</div>
+      <div class="pkg">
+        <div class="pkg-name">Starter</div>
+        <div class="pkg-price"><strong>$799</strong></div>
+        <p>Perfect for new businesses getting online.</p>
         <ul>
           <li>5-page professional website</li>
           <li>Mobile-friendly design</li>
@@ -357,237 +161,210 @@
           <li>1 revision round</li>
           <li>30 days support</li>
         </ul>
-        <button class="btn" style="width:100%;" onclick="openContactModal()">Get Started</button>
+        <button class="btn btn-outline" style="width:100%" onclick="openContactModal()">Get Started</button>
       </div>
-
-      <div class="package popular">
-        <div class="popular-badge">Most Popular</div>
-        <h3>Growth Website</h3>
-        <div class="price">$2,997</div>
+      <div class="pkg featured">
+        <div class="pkg-name">Growth</div>
+        <div class="pkg-price"><strong>$1,499</strong></div>
+        <p>For businesses ready to stand out.</p>
         <ul>
-          <li>Everything in Starter</li>
-          <li>Up to 8 pages</li>
-          <li>Professional copywriting</li>
-          <li>Google Business setup</li>
-          <li>Lead capture system</li>
-          <li>2 revision rounds</li>
-          <li>45 days support</li>
-          <li>1 month maintenance</li>
-        </ul>
-        <button class="btn" style="width:100%;" onclick="openContactModal()">Get Started</button>
-      </div>
-
-      <div class="package">
-        <h3>Premium Website</h3>
-        <div class="price">$4,997</div>
-        <ul>
-          <li>Everything in Growth</li>
+          <li>Up to 10 pages</li>
           <li>Custom design</li>
-          <li>Up to 12 pages</li>
-          <li>Blog + first 3 posts</li>
-          <li>Advanced SEO</li>
-          <li>Email marketing setup</li>
-          <li>60 days priority support</li>
-          <li>2 months maintenance</li>
-        </ul>
-        <button class="btn" style="width:100%;" onclick="openContactModal()">Get Started</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Android App Packages</h2>
-    <p class="section-sub">Custom Android apps built for real business use. Clean code, practical features, and full delivery.</p>
-
-    <div class="packages">
-      <div class="package">
-        <h3>Starter App</h3>
-        <div class="price">$4,500<span>+</span></div>
-        <ul>
-          <li>Simple Android application</li>
-          <li>Core features only</li>
-          <li>Clean, modern UI</li>
-          <li>Basic backend if needed</li>
-          <li>Google Play preparation</li>
-          <li>Source code included</li>
-          <li>30 days support</li>
-        </ul>
-        <button class="btn" style="width:100%;" onclick="openContactModal()">Discuss Project</button>
-      </div>
-
-      <div class="package popular">
-        <div class="popular-badge">Recommended</div>
-        <h3>Business App</h3>
-        <div class="price">$8,500<span>+</span></div>
-        <ul>
-          <li>Full-featured Android app</li>
-          <li>User accounts / login</li>
-          <li>Custom functionality</li>
-          <li>API integrations</li>
-          <li>Admin panel (if needed)</li>
-          <li>Google Play submission help</li>
+          <li>Blog or gallery section</li>
+          <li>Advanced contact / booking form</li>
+          <li>Domain + 1 year hosting</li>
+          <li>SEO foundation</li>
+          <li>2 revision rounds</li>
           <li>60 days support</li>
         </ul>
-        <button class="btn" style="width:100%;" onclick="openContactModal()">Discuss Project</button>
+        <button class="btn" style="width:100%;background:#fff;color:#111" onclick="openContactModal()">Get Started</button>
       </div>
-
-      <div class="package">
-        <h3>Custom / Advanced</h3>
-        <div class="price">Custom</div>
+      <div class="pkg">
+        <div class="pkg-name">Premium</div>
+        <div class="pkg-price"><strong>$2,499+</strong></div>
+        <p>Full custom solution for growing brands.</p>
         <ul>
-          <li>Complex applications</li>
-          <li>Real-time features</li>
-          <li>Advanced integrations</li>
-          <li>Larger feature sets</li>
-          <li>Ongoing development</li>
-          <li>iOS version available</li>
-          <li>Priority support</li>
+          <li>Unlimited pages</li>
+          <li>Fully custom design</li>
+          <li>E-commerce or advanced features</li>
+          <li>Copywriting assistance</li>
+          <li>Domain + 1 year hosting</li>
+          <li>Full SEO setup</li>
+          <li>3 revision rounds</li>
+          <li>90 days support</li>
         </ul>
-        <button class="btn" style="width:100%;" onclick="openContactModal()">Get a Quote</button>
+        <button class="btn btn-outline" style="width:100%" onclick="openContactModal()">Get Quote</button>
+      </div>
+    </div>
+
+    <div style="margin-top:56px">
+      <div class="section-label">Android App Packages</div>
+      <h2>Custom Android apps</h2>
+      <p class="section-sub">From concept to Google Play. Built with modern tools and clean architecture.</p>
+      <div class="packages">
+        <div class="pkg">
+          <div class="pkg-name">Starter App</div>
+          <div class="pkg-price"><strong>$1,999</strong></div>
+          <p>Simple, focused utility or content app.</p>
+          <ul>
+            <li>Core feature set</li>
+            <li>Clean modern UI</li>
+            <li>Google Play ready</li>
+            <li>Basic analytics</li>
+            <li>30 days support</li>
+          </ul>
+          <button class="btn btn-outline" style="width:100%" onclick="openContactModal()">Discuss Project</button>
+        </div>
+        <div class="pkg featured">
+          <div class="pkg-name">Business App</div>
+          <div class="pkg-price"><strong>$3,999</strong></div>
+          <p>Full-featured app with backend integration.</p>
+          <ul>
+            <li>Custom features + API</li>
+            <li>User accounts / auth</li>
+            <li>Push notifications</li>
+            <li>Admin tools</li>
+            <li>60 days support</li>
+          </ul>
+          <button class="btn" style="width:100%;background:#fff;color:#111" onclick="openContactModal()">Discuss Project</button>
+        </div>
+        <div class="pkg">
+          <div class="pkg-name">Custom / Complex</div>
+          <div class="pkg-price"><strong>Quote</strong></div>
+          <p>Advanced apps, trading tools, or multi-platform.</p>
+          <ul>
+            <li>Complex logic & data</li>
+            <li>Real-time features</li>
+            <li>iOS version possible</li>
+            <li>Ongoing maintenance options</li>
+            <li>Dedicated support</li>
+          </ul>
+          <button class="btn btn-outline" style="width:100%" onclick="openContactModal()">Get Quote</button>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background: #f8fafc;">
+<section id="work">
   <div class="container">
-    <h2>How It Works</h2>
-    <div class="steps" style="margin-top: 48px;">
-      <div>
-        <div class="step-num">1</div>
-        <h3>Discovery Call</h3>
-        <p>We discuss your goals and what you need built.</p>
+    <div class="section-label">Portfolio</div>
+    <h2>Examples of my work</h2>
+    <p class="section-sub">Real Android apps I’ve built, plus sample websites that show the range of styles I can deliver.</p>
+
+    <!-- Apps -->
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="video-wrap">
+          <video class="app-video" controls playsinline preload="metadata" poster="images/cicada/01-portfolio.jpg">
+            <source src="images/cicada/cicada-demo.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="phone-row">
+          <img src="images/cicada/01-portfolio.jpg" alt="Cicada Portfolio">
+          <img src="images/cicada/05-signals.jpg" alt="Cicada Signals">
+          <img src="images/cicada/03-equity-curve.jpg" alt="Cicada Equity Curve">
+          <img src="images/cicada/04-backtest.jpg" alt="Cicada Backtest">
+        </div>
+        <div class="work-card-body">
+          <span class="tag tag-app">Android App</span>
+          <h3>Cicada</h3>
+          <p>Algorithmic trading app with live portfolio tracking, signal generation, backtesting lab, risk management, and performance intelligence. Built with Kotlin + Alpaca.</p>
+        </div>
       </div>
-      <div>
-        <div class="step-num">2</div>
-        <h3>Proposal & Timeline</h3>
-        <p>You receive a clear plan, scope, and pricing.</p>
+
+      <div class="work-card">
+        <div class="phone-row">
+          <img src="images/responder-strong/01-home.jpg" alt="Responder Strong Home">
+          <img src="images/responder-strong/02-session.jpg" alt="Responder Strong Session">
+          <img src="images/responder-strong/04-readiness.jpg" alt="Responder Strong Readiness">
+          <img src="images/responder-strong/03-history.jpg" alt="Responder Strong History">
+        </div>
+        <div class="work-card-body">
+          <span class="tag tag-app">Android App</span>
+          <h3>Responder Strong</h3>
+          <p>Strength training app designed for first responders. 5/3/1 programming, readiness tracking, training maxes, session history, and role-based profiles.</p>
+        </div>
       </div>
-      <div>
-        <div class="step-num">3</div>
-        <h3>Build & Review</h3>
-        <p>I build it and share progress for feedback.</p>
+    </div>
+
+    <!-- Sample Websites -->
+    <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px">Sample Websites</h3>
+    <div class="samples-row">
+      <div class="sample-card">
+        <h4>Bella Notte</h4>
+        <p>Italian restaurant — elegant, editorial style</p>
+        <a href="samples/restaurant.html" target="_blank">View sample →</a>
       </div>
-      <div>
-        <div class="step-num">4</div>
-        <h3>Launch & Support</h3>
-        <p>We launch and I provide post-launch support.</p>
+      <div class="sample-card">
+        <h4>Apex Plumbing</h4>
+        <p>Service business — high-conversion layout</p>
+        <a href="samples/plumber.html" target="_blank">View sample →</a>
+      </div>
+      <div class="sample-card">
+        <h4>Forge Fitness</h4>
+        <p>Training brand — dark, athletic, video hero</p>
+        <a href="samples/fitness.html" target="_blank">View sample →</a>
+      </div>
+      <div class="sample-card">
+        <h4>Harper & Co.</h4>
+        <p>Real estate — premium, refined design</p>
+        <a href="samples/real-estate.html" target="_blank">View sample →</a>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<section id="contact" style="background:#fafafa">
   <div class="container">
-    <h2>Common Questions</h2>
-    <div style="max-width: 700px; margin: 40px auto 0;">
-      <div class="faq-item">
-        <h4>Do you only work with local clients?</h4>
-        <p>No. I work with clients worldwide. All communication is handled remotely.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Do I own everything when the project is finished?</h4>
-        <p>Yes. You receive full ownership of the website or app, including source code where applicable.</p>
-      </div>
-      <div class="faq-item">
-        <h4>Can you build iPhone apps too?</h4>
-        <p>Yes, iOS apps are available on request. Android is the primary focus right now.</p>
-      </div>
-      <div class="faq-item">
-        <h4>How long do projects usually take?</h4>
-        <p>Websites typically take 2–4 weeks. Android apps usually take 4–10+ weeks depending on complexity.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="cta">
-      <h2>Ready to Get Started?</h2>
-      <p>Click the button below to get my email address. You can copy it and send me a message from your preferred email service.</p>
-      <button class="btn" onclick="openContactModal()">Get Email Address</button>
+    <div class="contact-box">
+      <div class="section-label">Contact</div>
+      <h2>Let’s talk about your project</h2>
+      <p>Whether you need a website, an Android app, or both — send me a message and I’ll get back to you quickly.</p>
+      <button class="btn" onclick="openContactModal()">Email Me</button>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    <p>© 2026 Creighton Digital</p>
-    <p style="margin-top: 8px;">Websites & Mobile Apps • Available Worldwide</p>
+    <p>© 2026 Creighton Digital · Available worldwide</p>
   </div>
 </footer>
 
 <!-- Contact Modal -->
-<div class="modal-overlay" id="contactModal" onclick="closeModalOnOverlay(event)">
+<div class="modal-overlay" id="contactModal">
   <div class="modal">
     <button class="close-x" onclick="closeContactModal()">×</button>
     <h3>Contact Me</h3>
-    <p>Copy the email address below and send me a message from your preferred email service.</p>
-    
+    <p>Copy the email address below and paste it into your preferred email app.</p>
     <div class="email-display" id="emailText">CreightonDigital@gmail.com</div>
-    
-    <div class="modal-buttons">
-      <button class="btn btn-copy" onclick="copyEmail()">Copy Email</button>
-      <button class="btn btn-close" onclick="closeContactModal()">Close</button>
-    </div>
-    
+    <button class="btn btn-copy" onclick="copyEmail()">Copy Email</button>
     <div class="copy-feedback" id="copyFeedback">Copied to clipboard!</div>
   </div>
 </div>
 
 <script>
+  document.getElementById('hamburger').onclick = () => document.getElementById('mobileNav').classList.add('active');
+  document.getElementById('closeNav').onclick = () => document.getElementById('mobileNav').classList.remove('active');
+  document.querySelectorAll('.mobile-link').forEach(l => l.onclick = () => document.getElementById('mobileNav').classList.remove('active'));
+
   function openContactModal() {
     document.getElementById('contactModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
   }
-
   function closeContactModal() {
     document.getElementById('contactModal').classList.remove('active');
-    document.body.style.overflow = '';
-    document.getElementById('copyFeedback').classList.remove('show');
   }
-
-  function closeModalOnOverlay(event) {
-    if (event.target === document.getElementById('contactModal')) {
-      closeContactModal();
-    }
-  }
+  document.getElementById('contactModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('contactModal')) closeContactModal();
+  });
 
   function copyEmail() {
-    const email = 'CreightonDigital@gmail.com';
-    navigator.clipboard.writeText(email).then(() => {
-      const feedback = document.getElementById('copyFeedback');
-      feedback.classList.add('show');
-      setTimeout(() => {
-        feedback.classList.remove('show');
-      }, 2000);
-    }).catch(() => {
-      // Fallback for older browsers
-      const textArea = document.createElement('textarea');
-      textArea.value = email;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      
-      const feedback = document.getElementById('copyFeedback');
-      feedback.classList.add('show');
-      setTimeout(() => {
-        feedback.classList.remove('show');
-      }, 2000);
+    navigator.clipboard.writeText('CreightonDigital@gmail.com').then(() => {
+      document.getElementById('copyFeedback').classList.add('show');
+      setTimeout(() => document.getElementById('copyFeedback').classList.remove('show'), 2000);
     });
   }
-
-  // Close modal with Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeContactModal();
-    }
-  });
 </script>
-
 </body>
 </html>
