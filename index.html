@@ -15,21 +15,21 @@
     .container{max-width:1100px;margin:0 auto;padding:0 24px}
 
     /* Header */
-    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #eee;padding:16px 0}
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #e5e5e5;padding:16px 0}
     .nav{display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:1.25rem;font-weight:800;color:#111;text-decoration:none;letter-spacing:-.5px}
+    .logo{font-size:1.25rem;font-weight:800;color:#0f2e1d;text-decoration:none;letter-spacing:-.5px}
     .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
     .nav-links a{color:#444;text-decoration:none;font-size:.9rem;font-weight:500;transition:.2s}
-    .nav-links a:hover{color:#111}
-    .btn{display:inline-block;background:#111;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.9rem;border:none;cursor:pointer;transition:.2s}
-    .btn:hover{background:#333}
-    .btn-outline{background:transparent;border:1.5px solid #111;color:#111}
-    .btn-outline:hover{background:#111;color:#fff}
-    .btn-sm{padding:9px 18px;font-size:.85rem}
+    .nav-links a:hover{color:#0f2e1d}
+    .btn{display:inline-block;background:#1a4d35;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:.9rem;border:none;cursor:pointer;transition:.2s}
+    .btn:hover{background:#166534}
+    .btn-outline{background:transparent;border:1.5px solid #1a4d35;color:#1a4d35}
+    .btn-outline:hover{background:#1a4d35;color:#fff}
+    .btn-sm{padding:9px 18px;font-size:.85rem;color:#fff !important}
 
     .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px}
-    .hamburger span{display:block;width:22px;height:2px;background:#111;margin:5px 0}
-    .mobile-nav{display:none;position:fixed;inset:0;background:#111;z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:28px}
+    .hamburger span{display:block;width:22px;height:2px;background:#0f2e1d;margin:5px 0}
+    .mobile-nav{display:none;position:fixed;inset:0;background:#0f2e1d;z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:28px}
     .mobile-nav.active{display:flex}
     .mobile-nav a{color:#fff;text-decoration:none;font-size:1.3rem;font-weight:600}
     .mobile-nav .close-btn{position:absolute;top:22px;right:26px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
@@ -49,19 +49,19 @@
     /* Packages */
     .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .pkg{border:1px solid #e5e5e5;border-radius:10px;padding:28px 24px;transition:.2s}
-    .pkg:hover{border-color:#111;box-shadow:0 8px 30px rgba(0,0,0,.06)}
-    .pkg.featured{border-color:#111;background:#111;color:#fff}
-    .pkg.featured .pkg-price,.pkg.featured p,.pkg.featured li{color:#ccc}
+    .pkg:hover{border-color:#1a4d35;box-shadow:0 8px 30px rgba(26,77,53,.08)}
+    .pkg.featured{border-color:#1a4d35;background:#0f2e1d;color:#fff}
+    .pkg.featured .pkg-price,.pkg.featured p,.pkg.featured li{color:#c5d9ce}
     .pkg.featured .pkg-price strong{color:#fff}
     .pkg-name{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;color:#888}
-    .pkg.featured .pkg-name{color:#aaa}
+    .pkg.featured .pkg-name{color:#a3c4b3}
     .pkg-price{font-size:1.8rem;font-weight:800;margin-bottom:6px}
     .pkg-price strong{font-size:1.8rem}
     .pkg p{font-size:.9rem;color:#666;margin-bottom:18px}
     .pkg ul{list-style:none;margin-bottom:24px}
     .pkg li{padding:5px 0;font-size:.9rem;color:#444}
-    .pkg li::before{content:"✓ ";font-weight:700}
-    .pkg.featured li::before{color:#fff}
+    .pkg li::before{content:"✓ ";font-weight:700;color:#1a4d35}
+    .pkg.featured li::before{color:#7dd3a0}
 
     /* Portfolio */
     .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px}
@@ -70,20 +70,20 @@
     .work-card-body{padding:24px}
     .work-card h3{font-size:1.25rem;font-weight:700;margin-bottom:6px}
     .work-card .tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 10px;border-radius:4px;margin-bottom:12px}
-    .tag-app{background:#111;color:#fff}
-    .tag-web{background:#f0f0f0;color:#444}
+    .tag-app{background:#1a4d35;color:#fff}
+    .tag-web{background:#e8f5ee;color:#1a4d35}
     .work-card p{font-size:.92rem;color:#555;margin-bottom:16px}
-    .phone-row{display:flex;gap:10px;overflow-x:auto;padding:16px 16px 8px;background:#f8f8f8;scrollbar-width:thin}
+    .phone-row{display:flex;gap:10px;overflow-x:auto;padding:16px 16px 8px;background:#f4f8f6;scrollbar-width:thin}
     .phone-row img{height:220px;width:auto;border-radius:10px;flex-shrink:0;box-shadow:0 4px 16px rgba(0,0,0,.12)}
-    .app-video{width:100%;max-height:420px;object-fit:contain;background:#000;display:block}
-    .video-wrap{background:#000;border-radius:0}
+    .app-video{width:100%;max-height:420px;object-fit:contain;background:#0f2e1d;display:block}
+    .video-wrap{background:#0f2e1d;border-radius:0}
 
     .samples-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
     .sample-card{border:1px solid #e5e5e5;border-radius:10px;padding:20px;text-align:center;transition:.2s}
-    .sample-card:hover{border-color:#111}
+    .sample-card:hover{border-color:#1a4d35}
     .sample-card h4{font-size:1rem;font-weight:700;margin-bottom:4px}
     .sample-card p{font-size:.82rem;color:#666;margin-bottom:14px}
-    .sample-card a{font-size:.85rem;font-weight:600;color:#111;text-decoration:none}
+    .sample-card a{font-size:.85rem;font-weight:600;color:#1a4d35;text-decoration:none}
     .sample-card a:hover{text-decoration:underline}
 
     /* Contact */
@@ -177,7 +177,7 @@
           <li>2 revision rounds</li>
           <li>60 days support</li>
         </ul>
-        <button class="btn" style="width:100%;background:#fff;color:#111" onclick="openContactModal()">Get Started</button>
+        <button class="btn" style="width:100%;background:#fff;color:#0f2e1d" onclick="openContactModal()">Get Started</button>
       </div>
       <div class="pkg">
         <div class="pkg-name">Premium</div>
@@ -204,7 +204,7 @@
       <div class="packages">
         <div class="pkg">
           <div class="pkg-name">Starter App</div>
-          <div class="pkg-price"><strong>$1,999</strong></div>
+          <div class="pkg-price"><strong>$2,999</strong></div>
           <p>Simple, focused utility or content app.</p>
           <ul>
             <li>Core feature set</li>
@@ -217,7 +217,7 @@
         </div>
         <div class="pkg featured">
           <div class="pkg-name">Business App</div>
-          <div class="pkg-price"><strong>$3,999</strong></div>
+          <div class="pkg-price"><strong>$5,999</strong></div>
           <p>Full-featured app with backend integration.</p>
           <ul>
             <li>Custom features + API</li>
@@ -226,7 +226,7 @@
             <li>Admin tools</li>
             <li>60 days support</li>
           </ul>
-          <button class="btn" style="width:100%;background:#fff;color:#111" onclick="openContactModal()">Discuss Project</button>
+          <button class="btn" style="width:100%;background:#fff;color:#0f2e1d" onclick="openContactModal()">Discuss Project</button>
         </div>
         <div class="pkg">
           <div class="pkg-name">Custom / Complex</div>
