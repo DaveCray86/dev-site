@@ -252,11 +252,15 @@
     .app-video{width:100%;max-height:420px;object-fit:contain;background:#0f2e1d;display:block}
     .video-wrap{background:#0f2e1d;border-radius:0}
 
-    .samples-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
-    .sample-card{border:1px solid #e5e5e5;border-radius:10px;padding:20px;text-align:center;transition:.2s}
-    .sample-card:hover{border-color:#1a4d35}
+    .samples-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-bottom:48px}
+    .sample-card{border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;text-align:center;transition:.25s;background:#fff}
+    .sample-card:hover{border-color:#1a4d35;box-shadow:0 10px 28px rgba(0,0,0,.07);transform:translateY(-3px)}
+    .sample-card-img{aspect-ratio:16/10;overflow:hidden;background:#f0f0f0}
+    .sample-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s}
+    .sample-card:hover .sample-card-img img{transform:scale(1.04)}
+    .sample-card-body{padding:16px 14px 18px}
     .sample-card h4{font-size:1rem;font-weight:700;margin-bottom:4px}
-    .sample-card p{font-size:.82rem;color:#666;margin-bottom:14px}
+    .sample-card p{font-size:.82rem;color:#666;margin-bottom:12px;line-height:1.45}
     .sample-card a{font-size:.85rem;font-weight:600;color:#1a4d35;text-decoration:none}
     .sample-card a:hover{text-decoration:underline}
 
@@ -336,7 +340,73 @@
     <h2>What kind of work does Creighton Digital deliver?</h2>
     <p class="answer-block">Creighton Digital builds professional websites and custom Android apps for small and mid-sized businesses. Recent work includes live Android applications for algorithmic trading and first-responder strength training, plus sample websites for restaurants, service businesses, fitness, real estate, residential care, and rental properties.</p>
 
+    <!-- Sample Websites (above apps) -->
+    <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px">Sample Websites</h3>
+    <div class="samples-row">
+      <div class="sample-card">
+        <div class="sample-card-img">
+          <img src="samples/previews/restaurant.jpg" alt="Bella Notte restaurant sample screenshot" loading="lazy">
+        </div>
+        <div class="sample-card-body">
+          <h4>Bella Notte</h4>
+          <p>Italian restaurant — elegant, editorial style</p>
+          <a href="/samples/restaurant.html" target="_blank">View sample →</a>
+        </div>
+      </div>
+      <div class="sample-card">
+        <div class="sample-card-img">
+          <img src="samples/previews/plumber.jpg" alt="Apex Plumbing sample screenshot" loading="lazy">
+        </div>
+        <div class="sample-card-body">
+          <h4>Apex Plumbing</h4>
+          <p>Service business — high-conversion layout</p>
+          <a href="/samples/plumber.html" target="_blank">View sample →</a>
+        </div>
+      </div>
+      <div class="sample-card">
+        <div class="sample-card-img">
+          <img src="samples/previews/fitness.jpg" alt="Forge Fitness sample screenshot" loading="lazy">
+        </div>
+        <div class="sample-card-body">
+          <h4>Forge Fitness</h4>
+          <p>Training brand — dark, athletic, video hero</p>
+          <a href="/samples/fitness.html" target="_blank">View sample →</a>
+        </div>
+      </div>
+      <div class="sample-card">
+        <div class="sample-card-img">
+          <img src="samples/previews/real-estate.jpg" alt="Harper & Co. real estate sample screenshot" loading="lazy">
+        </div>
+        <div class="sample-card-body">
+          <h4>Harper &amp; Co.</h4>
+          <p>Real estate — premium, refined design</p>
+          <a href="/samples/real-estate.html" target="_blank">View sample →</a>
+        </div>
+      </div>
+      <div class="sample-card">
+        <div class="sample-card-img">
+          <img src="samples/previews/harmony-house.jpg" alt="Harmony House RCFE sample screenshot" loading="lazy">
+        </div>
+        <div class="sample-card-body">
+          <h4>Harmony House</h4>
+          <p>RCFE care home — warm, trustworthy</p>
+          <a href="/samples/harmony-house.html" target="_blank">View sample →</a>
+        </div>
+      </div>
+      <div class="sample-card">
+        <div class="sample-card-img">
+          <img src="samples/previews/coastal-rentals.jpg" alt="Coastal Rentals sample screenshot" loading="lazy">
+        </div>
+        <div class="sample-card-body">
+          <h4>Coastal Rentals</h4>
+          <p>Rental properties — photo galleries</p>
+          <a href="/samples/coastal-rentals.html" target="_blank">View sample →</a>
+        </div>
+      </div>
+    </div>
+
     <!-- Apps -->
+    <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px">Android Apps</h3>
     <div class="work-grid">
       <div class="work-card">
         <div class="video-wrap">
@@ -374,41 +444,6 @@
           <h3>Responder Strong</h3>
           <p>Strength training app designed for first responders. 5/3/1 programming, readiness tracking, training maxes, session history, and role-based profiles.</p>
         </div>
-      </div>
-    </div>
-
-    <!-- Sample Websites -->
-    <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px">Sample Websites</h3>
-    <div class="samples-row">
-      <div class="sample-card">
-        <h4>Bella Notte</h4>
-        <p>Italian restaurant — elegant, editorial style</p>
-        <a href="/samples/restaurant.html" target="_blank">View sample →</a>
-      </div>
-      <div class="sample-card">
-        <h4>Apex Plumbing</h4>
-        <p>Service business — high-conversion layout</p>
-        <a href="/samples/plumber.html" target="_blank">View sample →</a>
-      </div>
-      <div class="sample-card">
-        <h4>Forge Fitness</h4>
-        <p>Training brand — dark, athletic, video hero</p>
-        <a href="/samples/fitness.html" target="_blank">View sample →</a>
-      </div>
-      <div class="sample-card">
-        <h4>Harper & Co.</h4>
-        <p>Real estate — premium, refined design</p>
-        <a href="/samples/real-estate.html" target="_blank">View sample →</a>
-      </div>
-      <div class="sample-card">
-        <h4>Harmony House</h4>
-        <p>RCFE care home — warm, trustworthy</p>
-        <a href="/samples/harmony-house.html" target="_blank">View sample →</a>
-      </div>
-      <div class="sample-card">
-        <h4>Coastal Rentals</h4>
-        <p>Rental properties — photo galleries</p>
-        <a href="/samples/coastal-rentals.html" target="_blank">View sample →</a>
       </div>
     </div>
   </div>
