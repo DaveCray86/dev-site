@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coastal Rentals | Homes for Rent on the Central Coast</title>
+  <meta name="description" content="Quality rental homes on California’s Central Coast. Browse available properties, view full photo galleries, and apply online with Coastal Rentals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1e4a6e;
+      --blue-dark: #153650;
+      --blue-soft: #e8f1f7;
+      --accent: #2a7ab0;
+      --text: #1a1a1a;
+      --muted: #5a5a5a;
+      --border: #e2e8ee;
+      --bg: #f7f9fb;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); line-height: 1.6; background: #fff; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 15px 0;
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.3rem; font-weight: 800; color: var(--blue); letter-spacing: -.4px; }
+    .nav-links { display: flex; gap: 26px; list-style: none; align-items: center; }
+    .nav-links a { font-size: .9rem; font-weight: 500; color: var(--muted); transition: .2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .btn {
+      display: inline-block; background: var(--blue); color: #fff;
+      padding: 11px 22px; border-radius: 6px; font-weight: 600; font-size: .9rem;
+      border: none; cursor: pointer; transition: .2s;
+    }
+    .btn:hover { background: var(--blue-dark); }
+    .btn-outline {
+      background: transparent; border: 1.5px solid var(--blue); color: var(--blue);
+    }
+    .btn-outline:hover { background: var(--blue); color: #fff; }
+    .btn-sm { padding: 8px 16px; font-size: .85rem; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--blue); margin: 5px 0; }
+    .mobile-nav {
+      display: none; position: fixed; inset: 0; background: var(--blue-dark);
+      z-index: 99; flex-direction: column; justify-content: center; align-items: center; gap: 26px;
+    }
+    .mobile-nav.active { display: flex; }
+    .mobile-nav a { color: #fff; font-size: 1.2rem; font-weight: 600; }
+    .mobile-nav .close-btn { position: absolute; top: 20px; right: 24px; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
+
+    /* Hero */
+    .hero {
+      padding: 150px 0 80px;
+      background: linear-gradient(160deg, var(--blue-soft) 0%, #fff 70%);
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.3rem, 5vw, 3.3rem); font-weight: 800;
+      letter-spacing: -1.2px; line-height: 1.15; color: var(--blue-dark); margin-bottom: 16px;
+    }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 500px; margin: 0 auto 28px; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* Sections */
+    section { padding: 72px 0; }
+    .section-label {
+      display: inline-block; font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.4px; color: var(--accent); margin-bottom: 8px;
+    }
+    h2 { font-size: 1.9rem; font-weight: 800; letter-spacing: -.6px; margin-bottom: 12px; color: var(--blue-dark); }
+    .section-sub { color: var(--muted); max-width: 520px; margin-bottom: 36px; }
+
+    /* Property Cards */
+    .properties-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+    }
+    .property-card {
+      border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+      background: #fff; transition: .25s;
+    }
+    .property-card:hover { box-shadow: 0 14px 40px rgba(30,74,110,.1); transform: translateY(-3px); }
+    .property-main-img {
+      position: relative; aspect-ratio: 16/10; overflow: hidden; cursor: pointer; background: #e8eef3;
+    }
+    .property-main-img img {
+      width: 100%; height: 100%; object-fit: cover; transition: .35s;
+    }
+    .property-card:hover .property-main-img img { transform: scale(1.03); }
+    .property-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--blue); color: #fff; font-size: .72rem; font-weight: 700;
+      padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: .5px;
+    }
+    .property-body { padding: 20px 20px 18px; }
+    .property-price { font-size: 1.35rem; font-weight: 800; color: var(--blue); margin-bottom: 4px; }
+    .property-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
+    .property-meta { font-size: .88rem; color: var(--muted); margin-bottom: 14px; }
+    .property-thumbs {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 14px;
+    }
+    .property-thumbs img {
+      width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px;
+      cursor: pointer; border: 2px solid transparent; transition: .2s;
+    }
+    .property-thumbs img:hover { border-color: var(--accent); opacity: .9; }
+    .view-gallery-btn {
+      display: inline-block; margin-top: 14px; font-size: .85rem; font-weight: 600;
+      color: var(--accent); cursor: pointer;
+    }
+    .view-gallery-btn:hover { text-decoration: underline; }
+
+    /* About / Process */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .process-steps { list-style: none; }
+    .process-steps li {
+      display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+      background: var(--blue-soft); color: var(--blue); font-weight: 700;
+      font-size: .85rem; display: flex; align-items: center; justify-content: center;
+    }
+    .process-steps h4 { font-size: .98rem; font-weight: 700; margin-bottom: 2px; }
+    .process-steps p { font-size: .9rem; color: var(--muted); }
+
+    /* Contact */
+    .contact-section { background: var(--bg); }
+    .contact-box {
+      max-width: 500px; margin: 0 auto; background: #fff;
+      border-radius: 12px; padding: 36px 32px; border: 1px solid var(--border);
+    }
+    .contact-box h2 { text-align: center; }
+    .contact-box .section-sub { text-align: center; margin: 0 auto 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: 5px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 11px 13px; border: 1px solid var(--border);
+      border-radius: 7px; font-size: .95rem; font-family: inherit;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(42,122,176,.12);
+    }
+    .form-group textarea { min-height: 90px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-success {
+      display: none; text-align: center; padding: 20px;
+      background: var(--blue-soft); border-radius: 8px; color: var(--blue-dark);
+    }
+    .form-success.show { display: block; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(10,20,30,.92); align-items: center; justify-content: center;
+      flex-direction: column; padding: 20px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-img-wrap {
+      position: relative; max-width: 900px; width: 100%; max-height: 70vh;
+    }
+    .lightbox-img-wrap img {
+      width: 100%; max-height: 70vh; object-fit: contain; border-radius: 6px;
+    }
+    .lightbox-close {
+      position: absolute; top: 16px; right: 20px; background: none; border: none;
+      color: #fff; font-size: 2rem; cursor: pointer; z-index: 10; line-height: 1;
+    }
+    .lightbox-nav {
+      display: flex; gap: 16px; margin-top: 18px; align-items: center;
+    }
+    .lightbox-nav button {
+      background: rgba(255,255,255,.15); border: none; color: #fff;
+      width: 44px; height: 44px; border-radius: 50%; font-size: 1.3rem;
+      cursor: pointer; transition: .2s;
+    }
+    .lightbox-nav button:hover { background: rgba(255,255,255,.28); }
+    .lightbox-caption {
+      color: rgba(255,255,255,.85); font-size: .9rem; margin-top: 10px; text-align: center;
+    }
+    .lightbox-thumbs {
+      display: flex; gap: 8px; margin-top: 16px; justify-content: center; flex-wrap: wrap;
+    }
+    .lightbox-thumbs img {
+      width: 64px; height: 48px; object-fit: cover; border-radius: 4px;
+      cursor: pointer; border: 2px solid transparent; opacity: .7; transition: .2s;
+    }
+    .lightbox-thumbs img.active, .lightbox-thumbs img:hover {
+      border-color: #fff; opacity: 1;
+    }
+
+    /* Sample badge */
+    .sample-badge {
+      position: fixed; bottom: 18px; right: 18px; z-index: 50;
+      background: #0f2e1d; color: #fff; font-size: .72rem; font-weight: 600;
+      padding: 7px 12px; border-radius: 5px; opacity: .9;
+    }
+    .sample-badge a { color: #7dd3a0; margin-left: 5px; }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 28px 0; text-align: center;
+      color: var(--muted); font-size: .86rem;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .properties-grid, .two-col, .form-row { grid-template-columns: 1fr; }
+      .hero { padding: 130px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">Coastal Rentals</a>
+    <ul class="nav-links">
+      <li><a href="#properties">Properties</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#apply">How to Apply</a></li>
+      <li><a href="#contact" class="btn btn-sm">Inquire</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="closeNav">×</button>
+  <a href="#properties" class="mobile-link">Properties</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#apply" class="mobile-link">How to Apply</a>
+  <a href="#contact" class="mobile-link">Inquire</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Quality homes for rent<br>on the Central Coast.</h1>
+    <p>Browse available rentals, view full photo galleries, and find a place that feels right.</p>
+    <div class="hero-btns">
+      <a href="#properties" class="btn">View Available Homes</a>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- Properties -->
+<section id="properties">
+  <div class="container">
+    <div class="section-label">Available Now</div>
+    <h2>Featured rentals</h2>
+    <p class="section-sub">Click any photo to open the full gallery for that home — exterior plus dining, living, bedroom, and bathroom.</p>
+
+    <div class="properties-grid" id="propertiesGrid">
+      <!-- Property cards injected by JS for clean gallery data -->
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" style="background: var(--bg);">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="section-label">About</div>
+        <h2>Straightforward rentals, well-kept homes</h2>
+        <p style="color:var(--muted);margin-bottom:14px">Coastal Rentals manages a small collection of quality homes and units on California’s Central Coast. We focus on clean, well-maintained properties and clear communication with tenants.</p>
+        <p style="color:var(--muted)">Whether you’re looking for a quiet cottage, a family home, or a simple one-bedroom, our goal is to make the process easy and transparent from the first inquiry through move-in.</p>
+      </div>
+      <div>
+        <div class="section-label">What we offer</div>
+        <ul class="process-steps" style="margin-top:8px">
+          <li>
+            <span class="step-num">✓</span>
+            <div>
+              <h4>Well-maintained properties</h4>
+              <p>Regular upkeep and responsive maintenance.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">✓</span>
+            <div>
+              <h4>Clear application process</h4>
+              <p>Simple steps and honest timelines.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">✓</span>
+            <div>
+              <h4>Local knowledge</h4>
+              <p>Based on the Central Coast and familiar with the area.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How to Apply -->
+<section id="apply">
+  <div class="container">
+    <div class="section-label">Process</div>
+    <h2>How to apply</h2>
+    <p class="section-sub">A simple path from inquiry to keys.</p>
+    <div class="two-col">
+      <ul class="process-steps">
+        <li>
+          <span class="step-num">1</span>
+          <div>
+            <h4>Browse &amp; inquire</h4>
+            <p>View the photo galleries and send a message about the home you’re interested in.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div>
+            <h4>Schedule a showing</h4>
+            <p>We’ll arrange a time for you to see the property in person.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div>
+            <h4>Submit an application</h4>
+            <p>Complete a straightforward application with standard screening.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <div>
+            <h4>Move in</h4>
+            <p>Once approved, sign the lease and schedule your move-in date.</p>
+          </div>
+        </li>
+      </ul>
+      <div style="background:var(--blue-soft);border-radius:12px;padding:28px">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:10px;color:var(--blue-dark)">What we typically look for</h3>
+        <ul style="color:var(--muted);padding-left:18px;font-size:.95rem">
+          <li style="margin-bottom:6px">Stable income (generally 2.5–3× rent)</li>
+          <li style="margin-bottom:6px">Positive rental history</li>
+          <li style="margin-bottom:6px">Background &amp; credit screening</li>
+          <li>Clear communication throughout the process</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-box">
+      <div class="section-label" style="display:block;text-align:center">Contact</div>
+      <h2>Inquire about a rental</h2>
+      <p class="section-sub">Tell us which property you’re interested in and we’ll get back to you quickly.</p>
+
+      <form id="inquireForm" onsubmit="return handleInquire(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" required placeholder="(805) 555-0123">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label for="property">Property of interest</label>
+          <select id="property">
+            <option value="">Select a property...</option>
+            <option value="oceanview">Oceanview Cottage</option>
+            <option value="garden">Garden Villa</option>
+            <option value="loft">Downtown Loft</option>
+            <option value="bungalow">Coastal Bungalow</option>
+            <option value="any">Open to any available</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Move-in timeline, questions, etc."></textarea>
+        </div>
+        <button type="submit" class="btn" style="width:100%">Send Inquiry</button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <h3 style="margin-bottom:6px">Thank you</h3>
+        <p>We’ve received your inquiry and will respond shortly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Coastal Rentals · Central Coast, California</p>
+    <p style="margin-top:5px;font-size:.8rem">Sample website by <a href="https://creighton-digital.com" style="color:var(--accent);font-weight:600">Creighton Digital</a></p>
+  </div>
+</footer>
+
+<div class="sample-badge">Sample site · <a href="https://creighton-digital.com">Creighton Digital</a></div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+  <div class="lightbox-img-wrap">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+  <div class="lightbox-nav">
+    <button id="lightboxPrev" aria-label="Previous">‹</button>
+    <button id="lightboxNext" aria-label="Next">›</button>
+  </div>
+  <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+</div>
+
+<script>
+  // ========== Property Data (5 photos each) ==========
+  const properties = [
+    {
+      id: 'oceanview',
+      title: 'Oceanview Cottage',
+      price: '$2,450/mo',
+      meta: '2 bed · 1 bath · 980 sq ft · Santa Maria',
+      badge: 'Available',
+      photos: [
+        { src: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80', label: 'Exterior' },
+        { src: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=900&q=80', label: 'Dining Area' },
+        { src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=80', label: 'Living Room' },
+        { src: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=900&q=80', label: 'Bedroom' },
+        { src: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=900&q=80', label: 'Bathroom' }
+      ]
+    },
+    {
+      id: 'garden',
+      title: 'Garden Villa',
+      price: '$2,895/mo',
+      meta: '3 bed · 2 bath · 1,420 sq ft · Orcutt',
+      badge: 'Available',
+      photos: [
+        { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80', label: 'Exterior' },
+        { src: 'https://images.unsplash.com/photo-1617098900591-3f3194b0c0b0?w=900&q=80', label: 'Dining Area' },
+        { src: 'https://images.unsplash.com/photo-1618220179428-22790b461013?w=900&q=80', label: 'Living Room' },
+        { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=80', label: 'Bedroom' },
+        { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=900&q=80', label: 'Bathroom' }
+      ]
+    },
+    {
+      id: 'loft',
+      title: 'Downtown Loft',
+      price: '$1,875/mo',
+      meta: '1 bed · 1 bath · 720 sq ft · Santa Maria',
+      badge: 'Available',
+      photos: [
+        { src: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80', label: 'Exterior' },
+        { src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80', label: 'Dining Area' },
+        { src: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=900&q=80', label: 'Living Room' },
+        { src: 'https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=900&q=80', label: 'Bedroom' },
+        { src: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=900&q=80', label: 'Bathroom' }
+      ]
+    },
+    {
+      id: 'bungalow',
+      title: 'Coastal Bungalow',
+      price: '$2,650/mo',
+      meta: '2 bed · 2 bath · 1,150 sq ft · Nipomo',
+      badge: 'Available',
+      photos: [
+        { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80', label: 'Exterior' },
+        { src: 'https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?w=900&q=80', label: 'Dining Area' },
+        { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80', label: 'Living Room' },
+        { src: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=900&q=80', label: 'Bedroom' },
+        { src: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?w=900&q=80', label: 'Bathroom' }
+      ]
+    }
+  ];
+
+  // ========== Render Property Cards ==========
+  const grid = document.getElementById('propertiesGrid');
+  properties.forEach((prop, pIndex) => {
+    const card = document.createElement('div');
+    card.className = 'property-card';
+    card.innerHTML = `
+      <div class="property-main-img" data-prop="${pIndex}" data-photo="0">
+        <img src="${prop.photos[0].src}" alt="${prop.title} exterior" loading="lazy">
+        <span class="property-badge">${prop.badge}</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">${prop.price}</div>
+        <div class="property-title">${prop.title}</div>
+        <div class="property-meta">${prop.meta}</div>
+        <div class="property-thumbs">
+          ${prop.photos.slice(1).map((ph, i) => `
+            <img src="${ph.src}" alt="${ph.label}" data-prop="${pIndex}" data-photo="${i + 1}" loading="lazy">
+          `).join('')}
+        </div>
+        <span class="view-gallery-btn" data-prop="${pIndex}" data-photo="0">View full gallery →</span>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // ========== Lightbox ==========
+  let currentProp = 0;
+  let currentPhoto = 0;
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxThumbs = document.getElementById('lightboxThumbs');
+
+  function openLightbox(propIndex, photoIndex) {
+    currentProp = propIndex;
+    currentPhoto = photoIndex;
+    updateLightbox();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    const prop = properties[currentProp];
+    const photo = prop.photos[currentPhoto];
+    lightboxImg.src = photo.src;
+    lightboxImg.alt = `${prop.title} — ${photo.label}`;
+    lightboxCaption.textContent = `${prop.title} · ${photo.label} (${currentPhoto + 1} of ${prop.photos.length})`;
+
+    lightboxThumbs.innerHTML = prop.photos.map((ph, i) => `
+      <img src="${ph.src}" class="${i === currentPhoto ? 'active' : ''}" data-photo="${i}" alt="${ph.label}">
+    `).join('');
+
+    lightboxThumbs.querySelectorAll('img').forEach(img => {
+      img.onclick = () => {
+        currentPhoto = parseInt(img.dataset.photo);
+        updateLightbox();
+      };
+    });
+  }
+
+  function nextPhoto() {
+    currentPhoto = (currentPhoto + 1) % properties[currentProp].photos.length;
+    updateLightbox();
+  }
+  function prevPhoto() {
+    currentPhoto = (currentPhoto - 1 + properties[currentProp].photos.length) % properties[currentProp].photos.length;
+    updateLightbox();
+  }
+
+  // Click handlers for cards
+  document.addEventListener('click', e => {
+    const target = e.target.closest('[data-prop]');
+    if (target) {
+      openLightbox(parseInt(target.dataset.prop), parseInt(target.dataset.photo));
+    }
+  });
+
+  document.getElementById('lightboxClose').onclick = closeLightbox;
+  document.getElementById('lightboxNext').onclick = nextPhoto;
+  document.getElementById('lightboxPrev').onclick = prevPhoto;
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextPhoto();
+    if (e.key === 'ArrowLeft') prevPhoto();
+  });
+
+  // Mobile nav
+  document.getElementById('hamburger').onclick = () => document.getElementById('mobileNav').classList.add('active');
+  document.getElementById('closeNav').onclick = () => document.getElementById('mobileNav').classList.remove('active');
+  document.querySelectorAll('.mobile-link').forEach(l => l.onclick = () => document.getElementById('mobileNav').classList.remove('active'));
+
+  // Form
+  function handleInquire(e) {
+    e.preventDefault();
+    document.getElementById('inquireForm').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+    return false;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmony House | Residential Care for the Elderly</title>
+  <meta name="description" content="Harmony House provides compassionate residential care for seniors in a warm, home-like setting. Personalized support, engaging activities, and peace of mind for families.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #3d5c4a;
+      --green-dark: #2c4336;
+      --green-soft: #e8f0eb;
+      --cream: #f9f6f1;
+      --warm: #f3ebe0;
+      --text: #2a2a2a;
+      --muted: #5c5c5c;
+      --border: #e0d6c8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); line-height: 1.65; background: #fff; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 16px 0;
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--green-dark); letter-spacing: -.3px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a { font-size: .9rem; font-weight: 500; color: var(--muted); transition: .2s; }
+    .nav-links a:hover { color: var(--green); }
+    .btn {
+      display: inline-block; background: var(--green); color: #fff;
+      padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: .9rem;
+      border: none; cursor: pointer; transition: .2s;
+    }
+    .btn:hover { background: var(--green-dark); }
+    .btn-outline {
+      background: transparent; border: 1.5px solid var(--green); color: var(--green);
+    }
+    .btn-outline:hover { background: var(--green); color: #fff; }
+    .btn-sm { padding: 9px 18px; font-size: .85rem; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--green-dark); margin: 5px 0; }
+    .mobile-nav {
+      display: none; position: fixed; inset: 0; background: var(--green-dark);
+      z-index: 99; flex-direction: column; justify-content: center; align-items: center; gap: 28px;
+    }
+    .mobile-nav.active { display: flex; }
+    .mobile-nav a { color: #fff; font-size: 1.25rem; font-weight: 600; }
+    .mobile-nav .close-btn { position: absolute; top: 22px; right: 26px; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
+
+    /* Hero */
+    .hero {
+      padding: 160px 0 100px;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--warm) 100%);
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5.5vw, 3.8rem);
+      font-weight: 700; line-height: 1.15; color: var(--green-dark);
+      margin-bottom: 18px; letter-spacing: -.5px;
+    }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 520px; margin: 0 auto 32px; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    .section-label {
+      display: inline-block; font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--green);
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 700; color: var(--green-dark);
+      margin-bottom: 16px; letter-spacing: -.4px;
+    }
+    .section-sub { color: var(--muted); max-width: 560px; margin-bottom: 40px; font-size: 1.05rem; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .about-img {
+      border-radius: 12px; overflow: hidden;
+      aspect-ratio: 4/3; background: var(--warm);
+    }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text p { color: var(--muted); margin-bottom: 16px; }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card {
+      background: var(--cream); border-radius: 12px; padding: 28px 24px;
+      border: 1px solid var(--border); transition: .25s;
+    }
+    .service-card:hover { box-shadow: 0 12px 32px rgba(61,92,74,.1); transform: translateY(-3px); }
+    .service-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--green-dark); margin-bottom: 10px; }
+    .service-card p { font-size: .95rem; color: var(--muted); }
+
+    /* Amenities */
+    .amenities-list {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 32px;
+      max-width: 700px;
+    }
+    .amenity {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: .98rem; color: var(--text);
+    }
+    .amenity::before {
+      content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .gallery-item {
+      border-radius: 10px; overflow: hidden; aspect-ratio: 4/3;
+      background: var(--warm);
+    }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: .35s; }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    /* Testimonials */
+    .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .testimonial {
+      background: var(--cream); border-radius: 12px; padding: 28px;
+      border: 1px solid var(--border);
+    }
+    .testimonial p { font-size: 1.02rem; color: var(--text); margin-bottom: 16px; font-style: italic; }
+    .testimonial .author { font-size: .9rem; font-weight: 600; color: var(--green-dark); }
+    .testimonial .relation { font-size: .85rem; color: var(--muted); }
+
+    /* Contact / Tour */
+    .contact-section { background: var(--cream); }
+    .contact-box {
+      max-width: 520px; margin: 0 auto; background: #fff;
+      border-radius: 14px; padding: 40px 36px;
+      border: 1px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,.04);
+    }
+    .contact-box h2 { text-align: center; margin-bottom: 8px; }
+    .contact-box .section-sub { text-align: center; margin: 0 auto 28px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: .88rem; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 14px; border: 1px solid var(--border);
+      border-radius: 8px; font-size: .95rem; font-family: inherit;
+      background: #fff; transition: .2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(61,92,74,.12);
+    }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-success {
+      display: none; text-align: center; padding: 24px;
+      background: var(--green-soft); border-radius: 10px; color: var(--green-dark);
+    }
+    .form-success.show { display: block; }
+    .form-success h3 { margin-bottom: 8px; }
+
+    /* Sample badge */
+    .sample-badge {
+      position: fixed; bottom: 20px; right: 20px; z-index: 50;
+      background: #0f2e1d; color: #fff; font-size: .75rem; font-weight: 600;
+      padding: 8px 14px; border-radius: 6px; opacity: .9;
+    }
+    .sample-badge a { color: #7dd3a0; margin-left: 6px; }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 32px 0; text-align: center;
+      color: var(--muted); font-size: .88rem; background: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .about-grid, .services-grid, .gallery-grid, .testimonials-grid, .amenities-list, .form-row {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 130px 0 70px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">Harmony House</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Care</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#tour" class="btn btn-sm">Schedule a Tour</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="closeNav">×</button>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#services" class="mobile-link">Care</a>
+  <a href="#amenities" class="mobile-link">Amenities</a>
+  <a href="#gallery" class="mobile-link">Gallery</a>
+  <a href="#tour" class="mobile-link">Schedule a Tour</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>A warm home.<br>Thoughtful care.</h1>
+    <p>Harmony House provides compassionate residential care for seniors in a peaceful, home-like setting on California’s Central Coast.</p>
+    <div class="hero-btns">
+      <a href="#tour" class="btn">Schedule a Tour</a>
+      <a href="#about" class="btn btn-outline">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1581579438747-104c53d7fbc4?w=800&q=80" alt="Warm living room at Harmony House" loading="lazy">
+      </div>
+      <div class="about-text">
+        <div class="section-label">Our Home</div>
+        <h2>Care that feels like family</h2>
+        <p>Harmony House is a licensed Residential Care Facility for the Elderly dedicated to helping seniors live with dignity, comfort, and connection. We believe good care starts with knowing each resident as a person — not just a care plan.</p>
+        <p>Our small, home-like setting allows us to provide personalized attention while creating a calm, welcoming environment for residents and their families.</p>
+        <p>Whether your loved one needs assistance with daily activities, medication management, or simply a safe and engaging place to call home, we are here to support them with respect and genuine care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" style="background: var(--cream);">
+  <div class="container">
+    <div class="section-label">Services</div>
+    <h2>Support tailored to each resident</h2>
+    <p class="section-sub">We provide personalized assistance that adapts as needs change, always focused on comfort, safety, and quality of life.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Assistance with Daily Living</h3>
+        <p>Help with bathing, dressing, grooming, mobility, and other everyday activities — delivered with patience and dignity.</p>
+      </div>
+      <div class="service-card">
+        <h3>Medication Management</h3>
+        <p>Careful coordination and administration of medications, with clear communication to families and healthcare providers.</p>
+      </div>
+      <div class="service-card">
+        <h3>Nutritious Meals</h3>
+        <p>Home-cooked meals prepared with care, accommodating dietary needs and preferences in a shared dining experience.</p>
+      </div>
+      <div class="service-card">
+        <h3>Activities &amp; Engagement</h3>
+        <p>Daily opportunities for social connection, light exercise, hobbies, and meaningful activities that support well-being.</p>
+      </div>
+      <div class="service-card">
+        <h3>24/7 Supervision</h3>
+        <p>Awake staff around the clock to provide safety, support, and peace of mind for residents and families.</p>
+      </div>
+      <div class="service-card">
+        <h3>Family Communication</h3>
+        <p>Regular updates and open communication so families stay informed and involved in their loved one’s care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Amenities -->
+<section id="amenities">
+  <div class="container">
+    <div class="section-label">Amenities</div>
+    <h2>Comfortable living spaces</h2>
+    <p class="section-sub">Our home is designed to feel welcoming and peaceful — a place residents can truly settle into.</p>
+    <div class="amenities-list">
+      <div class="amenity">Private and shared rooms available</div>
+      <div class="amenity">Comfortable common living areas</div>
+      <div class="amenity">Outdoor garden and seating</div>
+      <div class="amenity">Home-style dining room</div>
+      <div class="amenity">Wi-Fi and television access</div>
+      <div class="amenity">Laundry services included</div>
+      <div class="amenity">Transportation assistance for appointments</div>
+      <div class="amenity">Housekeeping and maintenance</div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" style="background: var(--cream);">
+  <div class="container">
+    <div class="section-label">Gallery</div>
+    <h2>A glimpse of daily life</h2>
+    <p class="section-sub">Warm spaces, shared moments, and the everyday comfort of home.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=600&q=80" alt="Cozy living area" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1581579438747-104c53d7fbc4?w=600&q=80" alt="Comfortable seating" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80" alt="Bright dining space" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Outdoor garden area" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80" alt="Peaceful bedroom" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=600&q=80" alt="Shared activity space" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label">Families</div>
+    <h2>What families are saying</h2>
+    <p class="section-sub">Hearing from families is one of the most meaningful parts of the work we do.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p>“Finding Harmony House gave us so much peace of mind. The staff treats my mother with real kindness, and she has settled in more than we hoped.”</p>
+        <div class="author">— Susan M.</div>
+        <div class="relation">Daughter of resident</div>
+      </div>
+      <div class="testimonial">
+        <p>“It feels like a real home, not an institution. The communication is excellent and the care is consistent. We are very grateful.”</p>
+        <div class="author">— Robert &amp; Linda T.</div>
+        <div class="relation">Family of resident</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tour / Contact -->
+<section id="tour" class="contact-section">
+  <div class="container">
+    <div class="contact-box">
+      <div class="section-label" style="display:block;text-align:center">Visit Us</div>
+      <h2>Schedule a tour</h2>
+      <p class="section-sub">We’d be glad to show you around and answer your questions. Fill out the form and we’ll be in touch shortly.</p>
+
+      <form id="tourForm" onsubmit="return handleTourSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(805) 555-0123">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label for="interest">I’m interested in</label>
+          <select id="interest" name="interest">
+            <option value="tour">Scheduling a tour</option>
+            <option value="info">General information</option>
+            <option value="availability">Checking availability</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" placeholder="Tell us a little about what you’re looking for..."></textarea>
+        </div>
+        <button type="submit" class="btn" style="width:100%">Request a Tour</button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <h3>Thank you</h3>
+        <p>We’ve received your request and will be in touch soon to schedule a visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Harmony House · Residential Care Facility for the Elderly · Central Coast, California</p>
+    <p style="margin-top:6px;font-size:.8rem">Sample website created by <a href="https://creighton-digital.com" style="color:var(--green);font-weight:600">Creighton Digital</a></p>
+  </div>
+</footer>
+
+<div class="sample-badge">
+  Sample site · <a href="https://creighton-digital.com">Creighton Digital</a>
+</div>
+
+<script>
+  // Mobile nav
+  document.getElementById('hamburger').onclick = () => document.getElementById('mobileNav').classList.add('active');
+  document.getElementById('closeNav').onclick = () => document.getElementById('mobileNav').classList.remove('active');
+  document.querySelectorAll('.mobile-link').forEach(l => l.onclick = () => document.getElementById('mobileNav').classList.remove('active'));
+
+  // Tour form
+  function handleTourSubmit(e) {
+    e.preventDefault();
+    document.getElementById('tourForm').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+    return false;
+  }
+</script>
+</body>
+</html>
