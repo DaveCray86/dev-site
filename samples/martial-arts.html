@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relentless Academy | Brazilian Jiu-Jitsu & Muay Thai | Central Coast</title>
+  <meta name="description" content="Relentless Academy teaches Brazilian Jiu-Jitsu and Muay Thai for all levels. Structured classes, experienced coaches, and a serious training environment on the Central Coast.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://creighton-digital.com/samples/martial-arts">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Relentless Academy | BJJ & Muay Thai">
+  <meta property="og:description" content="Brazilian Jiu-Jitsu and Muay Thai training for beginners through competitors.">
+  <meta property="og:url" content="https://creighton-digital.com/samples/martial-arts">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "Relentless Academy",
+    "description": "Brazilian Jiu-Jitsu and Muay Thai martial arts school for all levels.",
+    "url": "https://creighton-digital.com/samples/martial-arts",
+    "telephone": "(805) 555-0199",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santa Maria",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "sport": ["Brazilian Jiu-Jitsu", "Muay Thai"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you accept beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Relentless Academy has beginner-friendly BJJ and Muay Thai classes. No experience is required to start."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I bring to my first class?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wear comfortable athletic clothes. For BJJ, a gi is helpful but not required for your first trial. Water and a positive attitude are enough to get started."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer kids classes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We offer youth Brazilian Jiu-Jitsu classes focused on discipline, confidence, and fundamentals in a safe environment."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:#f5f5f5;line-height:1.6;background:#0a0a0a}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:.3s}
+    header.scrolled{background:rgba(10,10,10,.96);border-bottom:1px solid #222;padding:14px 0}
+    .nav{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:1.35rem;font-weight:900;letter-spacing:-.5px;color:#fff}
+    .logo span{color:#ef4444}
+    .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+    .nav-links a{color:rgba(255,255,255,.75);font-size:.9rem;font-weight:500;transition:.2s}
+    .nav-links a:hover{color:#ef4444}
+    .btn{display:inline-block;background:#ef4444;color:#fff;padding:12px 24px;border-radius:4px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:.2s}
+    .btn:hover{background:#dc2626}
+    .btn-outline{background:transparent;border:1.5px solid rgba(255,255,255,.5);color:#fff}
+    .btn-outline:hover{background:#fff;color:#0a0a0a;border-color:#fff}
+    .btn-sm{padding:8px 16px;font-size:.85rem}
+    .nav-links a.btn{color:#fff}
+    .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+    .hamburger span{display:block;width:22px;height:2px;background:#fff;margin:5px 0}
+    .mobile-nav{display:none;position:fixed;inset:0;background:#0a0a0a;z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:28px}
+    .mobile-nav.active{display:flex}
+    .mobile-nav a{color:#fff;font-size:1.3rem;font-weight:700}
+    .mobile-nav .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1555597673-b21f3b25aef7?w=1600&q=80') center/cover}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,.88) 0%,rgba(10,10,10,.55) 100%)}
+    .hero-content{position:relative;z-index:2;padding:140px 0 100px;max-width:620px}
+    .hero h1{font-size:clamp(2.8rem,6vw,4.2rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px}
+    .hero h1 span{color:#ef4444}
+    .hero p{font-size:1.15rem;color:#a3a3a3;margin-bottom:32px;max-width:460px}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+
+    section{padding:80px 0}
+    .section-label{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#ef4444;margin-bottom:10px}
+    h2{font-size:2.2rem;font-weight:900;letter-spacing:-.8px;margin-bottom:12px}
+    .section-sub{color:#737373;max-width:520px;margin-bottom:40px}
+
+    .programs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .program{background:#141414;border:1px solid #222;border-radius:10px;padding:28px 24px;transition:.2s}
+    .program:hover{border-color:#ef4444}
+    .program h3{font-size:1.2rem;font-weight:800;margin-bottom:10px}
+    .program p{color:#a3a3a3;font-size:.95rem;margin-bottom:14px}
+    .program ul{list-style:none;font-size:.9rem;color:#a3a3a3}
+    .program li{padding:4px 0}
+    .program li::before{content:"→ ";color:#ef4444;font-weight:700}
+
+    .schedule{background:#111}
+    .sched-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+    .sched-day{background:#0a0a0a;border:1px solid #222;border-radius:8px;padding:18px}
+    .sched-day h4{font-size:.95rem;font-weight:800;margin-bottom:10px;color:#ef4444}
+    .sched-day p{font-size:.88rem;color:#a3a3a3;padding:3px 0}
+
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .why-item h3{font-size:1.1rem;font-weight:800;margin-bottom:8px}
+    .why-item p{color:#737373;font-size:.95rem}
+
+    .faq-list{max-width:700px}
+    .faq-item{border-bottom:1px solid #222;padding:20px 0}
+    .faq-item:first-child{border-top:1px solid #222}
+    .faq-q{font-weight:700;margin-bottom:6px}
+    .faq-a{color:#a3a3a3;font-size:.95rem}
+
+    .contact-box{max-width:480px;margin:0 auto;background:#141414;border:1px solid #222;border-radius:12px;padding:36px 28px}
+    .form-group{margin-bottom:16px}
+    .form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:#a3a3a3}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:#fff;font-size:.95rem;font-family:inherit}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:#ef4444}
+    .form-group textarea{min-height:90px;resize:vertical}
+    .form-success{display:none;text-align:center;padding:20px;background:#14532d;border-radius:8px;color:#bbf7d0}
+    .form-success.show{display:block}
+
+    .sample-badge{position:fixed;bottom:18px;right:18px;z-index:50;background:#0f2e1d;color:#fff;font-size:.72rem;font-weight:600;padding:7px 12px;border-radius:5px;opacity:.9}
+    .sample-badge a{color:#7dd3a0;margin-left:5px}
+    footer{border-top:1px solid #222;padding:28px 0;text-align:center;color:#525252;font-size:.88rem}
+
+    @media(max-width:800px){
+      .nav-links{display:none}.hamburger{display:block}
+      .programs,.why-grid{grid-template-columns:1fr}
+      .hero{min-height:90vh}
+    }
+  </style>
+</head>
+<body>
+<header id="header">
+  <div class="container nav">
+    <a href="#" class="logo">RELENTLESS<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="btn btn-sm">Free Trial</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="closeNav">×</button>
+  <a href="#programs" class="mobile-link">Programs</a>
+  <a href="#schedule" class="mobile-link">Schedule</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#contact" class="mobile-link">Free Trial</a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1>TRAIN HARD.<br><span>STAY READY.</span></h1>
+      <p>Brazilian Jiu-Jitsu and Muay Thai for beginners through competitors. Structured classes. Real coaching. No shortcuts.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn">Start Free Trial</a>
+        <a href="#programs" class="btn btn-outline">View Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="container">
+    <div class="section-label">Programs</div>
+    <h2>What we teach</h2>
+    <p class="section-sub">Focused training in the arts that matter — on the mats and in real life.</p>
+    <div class="programs">
+      <div class="program">
+        <h3>Brazilian Jiu-Jitsu</h3>
+        <p>Technical ground fighting built on leverage, timing, and problem-solving.</p>
+        <ul>
+          <li>Fundamentals &amp; advanced classes</li>
+          <li>Gi and no-gi options</li>
+          <li>Competition team available</li>
+        </ul>
+      </div>
+      <div class="program">
+        <h3>Muay Thai</h3>
+        <p>The art of eight limbs — striking, clinch, conditioning, and fight IQ.</p>
+        <ul>
+          <li>Technique and pad work</li>
+          <li>Sparring for ready students</li>
+          <li> conditioning built into class</li>
+        </ul>
+      </div>
+      <div class="program">
+        <h3>Youth BJJ</h3>
+        <p>Discipline, confidence, and respect taught through age-appropriate training.</p>
+        <ul>
+          <li>Ages 6–14</li>
+          <li>Safe, structured environment</li>
+          <li>Focus on fundamentals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="schedule" class="schedule">
+  <div class="container">
+    <div class="section-label">Schedule</div>
+    <h2>Weekly classes</h2>
+    <p class="section-sub">Sample schedule — times adjust by location and season.</p>
+    <div class="sched-grid">
+      <div class="sched-day">
+        <h4>Monday</h4>
+        <p>6:00 AM — BJJ Fundamentals</p>
+        <p>12:00 PM — Open Mat</p>
+        <p>6:00 PM — Muay Thai</p>
+        <p>7:15 PM — BJJ All Levels</p>
+      </div>
+      <div class="sched-day">
+        <h4>Wednesday</h4>
+        <p>6:00 AM — Muay Thai</p>
+        <p>5:00 PM — Youth BJJ</p>
+        <p>6:00 PM — BJJ Fundamentals</p>
+        <p>7:15 PM — No-Gi</p>
+      </div>
+      <div class="sched-day">
+        <h4>Friday</h4>
+        <p>12:00 PM — Open Mat</p>
+        <p>6:00 PM — Muay Thai</p>
+        <p>7:15 PM — BJJ All Levels</p>
+      </div>
+      <div class="sched-day">
+        <h4>Saturday</h4>
+        <p>9:00 AM — BJJ Fundamentals</p>
+        <p>10:30 AM — Muay Thai</p>
+        <p>12:00 PM — Open Mat</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="section-label">Why train here</div>
+    <h2>Built for serious progress</h2>
+    <div class="why-grid" style="margin-top:36px">
+      <div class="why-item">
+        <h3>Clear structure</h3>
+        <p>Classes follow a progression so you always know what you’re working on and why.</p>
+      </div>
+      <div class="why-item">
+        <h3>Coaches who teach</h3>
+        <p>Instruction first. Ego stays off the mat. Beginners get coached, not ignored.</p>
+      </div>
+      <div class="why-item">
+        <h3>All levels welcome</h3>
+        <p>From first day on the mats to competition prep — there’s a place for you here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:#111">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2>Common questions</h2>
+    <div class="faq-list" style="margin-top:28px">
+      <div class="faq-item">
+        <div class="faq-q">Do you accept beginners?</div>
+        <div class="faq-a">Yes. We have beginner-friendly BJJ and Muay Thai classes. No experience required.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What should I bring to my first class?</div>
+        <div class="faq-a">Comfortable athletic clothes and water. A gi helps for BJJ but isn’t required for your trial class.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer kids classes?</div>
+        <div class="faq-a">Yes. Youth BJJ focuses on discipline, confidence, and fundamentals in a safe environment.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div class="section-label" style="display:block;text-align:center">Get started</div>
+      <h2 style="text-align:center;margin-bottom:8px">Claim your free trial</h2>
+      <p style="text-align:center;color:#737373;margin-bottom:24px;font-size:.95rem">Tell us a little about yourself and we’ll get you on the mats.</p>
+      <form id="trialForm" onsubmit="return handleTrial(event)">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" required placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" required placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label>Interest</label>
+          <select>
+            <option>Brazilian Jiu-Jitsu</option>
+            <option>Muay Thai</option>
+            <option>Youth BJJ</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Experience level</label>
+          <select>
+            <option>Complete beginner</option>
+            <option>Some experience</option>
+            <option>Intermediate / advanced</option>
+          </select>
+        </div>
+        <button type="submit" class="btn" style="width:100%">Request Free Trial</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <strong>You’re in.</strong><br>We’ll contact you shortly to lock in your trial class.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Relentless Academy · Brazilian Jiu-Jitsu &amp; Muay Thai · Central Coast, California</p>
+    <p style="margin-top:6px;font-size:.8rem">Sample site by <a href="https://creighton-digital.com" style="color:#ef4444;font-weight:600">Creighton Digital</a></p>
+  </div>
+</footer>
+<div class="sample-badge">Sample site · <a href="https://creighton-digital.com">Creighton Digital</a></div>
+
+<script>
+  const header=document.getElementById('header');
+  window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40));
+  document.getElementById('hamburger').onclick=()=>document.getElementById('mobileNav').classList.add('active');
+  document.getElementById('closeNav').onclick=()=>document.getElementById('mobileNav').classList.remove('active');
+  document.querySelectorAll('.mobile-link').forEach(l=>l.onclick=()=>document.getElementById('mobileNav').classList.remove('active'));
+  function handleTrial(e){
+    e.preventDefault();
+    document.getElementById('trialForm').style.display='none';
+    document.getElementById('formSuccess').classList.add('show');
+    return false;
+  }
+</script>
+</body>
+</html>
