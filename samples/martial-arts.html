@@ -94,7 +94,7 @@
     .mobile-nav .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
 
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1555597673-b21f3b25aef7?w=1600&q=80') center/cover}
+    .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1600&q=80') center/cover}
     .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,.88) 0%,rgba(10,10,10,.55) 100%)}
     .hero-content{position:relative;z-index:2;padding:140px 0 100px;max-width:620px}
     .hero h1{font-size:clamp(2.8rem,6vw,4.2rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px}
@@ -107,14 +107,32 @@
     h2{font-size:2.2rem;font-weight:900;letter-spacing:-.8px;margin-bottom:12px}
     .section-sub{color:#737373;max-width:520px;margin-bottom:40px}
 
-    .programs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .program{background:#141414;border:1px solid #222;border-radius:10px;padding:28px 24px;transition:.2s}
+    /* Horizontal program cards */
+    .programs{display:flex;flex-direction:column;gap:20px}
+    .program{
+      display:grid;grid-template-columns:280px 1fr;gap:0;
+      background:#141414;border:1px solid #222;border-radius:10px;overflow:hidden;transition:.2s;
+    }
     .program:hover{border-color:#ef4444}
-    .program h3{font-size:1.2rem;font-weight:800;margin-bottom:10px}
+    .program:nth-child(even){grid-template-columns:1fr 280px}
+    .program:nth-child(even) .program-img{order:2}
+    .program-img{min-height:200px;overflow:hidden;background:#1a1a1a}
+    .program-img img{width:100%;height:100%;object-fit:cover;transition:.35s}
+    .program:hover .program-img img{transform:scale(1.04)}
+    .program-body{padding:28px 28px;display:flex;flex-direction:column;justify-content:center}
+    .program h3{font-size:1.35rem;font-weight:800;margin-bottom:10px}
     .program p{color:#a3a3a3;font-size:.95rem;margin-bottom:14px}
-    .program ul{list-style:none;font-size:.9rem;color:#a3a3a3}
-    .program li{padding:4px 0}
+    .program ul{list-style:none;font-size:.9rem;color:#a3a3a3;display:flex;flex-wrap:wrap;gap:6px 18px}
+    .program li{padding:2px 0}
     .program li::before{content:"→ ";color:#ef4444;font-weight:700}
+
+    /* Gallery */
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .gallery-item{border-radius:8px;overflow:hidden;aspect-ratio:4/3;background:#1a1a1a;position:relative}
+    .gallery-item.wide{grid-column:span 2;aspect-ratio:16/9}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.4s}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-item .cap{position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:.78rem;font-weight:600;color:#fff}
 
     .schedule{background:#111}
     .sched-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
@@ -125,6 +143,11 @@
     .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     .why-item h3{font-size:1.1rem;font-weight:800;margin-bottom:8px}
     .why-item p{color:#737373;font-size:.95rem}
+
+    .train-strip{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:360px}
+    .train-photo{background-size:cover;background-position:center}
+    .train-copy{background:#111;padding:48px 40px;display:flex;flex-direction:column;justify-content:center}
+    .train-copy p{color:#a3a3a3;margin-bottom:14px}
 
     .faq-list{max-width:700px}
     .faq-item{border-bottom:1px solid #222;padding:20px 0}
@@ -147,8 +170,14 @@
 
     @media(max-width:800px){
       .nav-links{display:none}.hamburger{display:block}
-      .programs,.why-grid{grid-template-columns:1fr}
+      .program,.program:nth-child(even){grid-template-columns:1fr}
+      .program:nth-child(even) .program-img{order:0}
+      .program-img{min-height:180px;aspect-ratio:16/10}
+      .why-grid,.gallery-grid,.train-strip{grid-template-columns:1fr}
+      .gallery-item.wide{grid-column:span 1;aspect-ratio:4/3}
+      .gallery-grid{grid-template-columns:1fr 1fr}
       .hero{min-height:90vh}
+      .train-copy{padding:36px 24px}
     }
   </style>
 </head>
@@ -158,6 +187,7 @@
     <a href="#" class="logo">RELENTLESS<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#programs">Programs</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#schedule">Schedule</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="btn btn-sm">Free Trial</a></li>
@@ -168,6 +198,7 @@
 <div class="mobile-nav" id="mobileNav">
   <button class="close-btn" id="closeNav">×</button>
   <a href="#programs" class="mobile-link">Programs</a>
+  <a href="#gallery" class="mobile-link">Gallery</a>
   <a href="#schedule" class="mobile-link">Schedule</a>
   <a href="#faq" class="mobile-link">FAQ</a>
   <a href="#contact" class="mobile-link">Free Trial</a>
@@ -194,36 +225,108 @@
     <h2>What we teach</h2>
     <p class="section-sub">Focused training in the arts that matter — on the mats and in real life.</p>
     <div class="programs">
+
       <div class="program">
-        <h3>Brazilian Jiu-Jitsu</h3>
-        <p>Technical ground fighting built on leverage, timing, and problem-solving.</p>
-        <ul>
-          <li>Fundamentals &amp; advanced classes</li>
-          <li>Gi and no-gi options</li>
-          <li>Competition team available</li>
-        </ul>
+        <div class="program-img">
+          <img src="martial-images/bjj1.jpg" alt="Brazilian Jiu-Jitsu sparring on the mats" loading="lazy">
+        </div>
+        <div class="program-body">
+          <h3>Brazilian Jiu-Jitsu</h3>
+          <p>Technical ground fighting built on leverage, timing, and problem-solving. Gi and no-gi classes for every level.</p>
+          <ul>
+            <li>Fundamentals &amp; advanced</li>
+            <li>Gi and no-gi</li>
+            <li>Competition team</li>
+          </ul>
+        </div>
       </div>
+
       <div class="program">
-        <h3>Muay Thai</h3>
-        <p>The art of eight limbs — striking, clinch, conditioning, and fight IQ.</p>
-        <ul>
-          <li>Technique and pad work</li>
-          <li>Sparring for ready students</li>
-          <li> conditioning built into class</li>
-        </ul>
+        <div class="program-img">
+          <img src="martial-images/mt2.jpg" alt="Muay Thai heavy bag kick training" loading="lazy">
+        </div>
+        <div class="program-body">
+          <h3>Muay Thai</h3>
+          <p>The art of eight limbs — striking, clinch, conditioning, and fight IQ. Pad work and bag rounds every class.</p>
+          <ul>
+            <li>Technique &amp; pad work</li>
+            <li>Sparring for ready students</li>
+            <li>Conditioning built in</li>
+          </ul>
+        </div>
       </div>
+
       <div class="program">
-        <h3>Youth BJJ</h3>
-        <p>Discipline, confidence, and respect taught through age-appropriate training.</p>
-        <ul>
-          <li>Ages 6–14</li>
-          <li>Safe, structured environment</li>
-          <li>Focus on fundamentals</li>
-        </ul>
+        <div class="program-img">
+          <img src="martial-images/yt2.jpg" alt="Youth BJJ class with coach and kids on mats" loading="lazy">
+        </div>
+        <div class="program-body">
+          <h3>Youth BJJ</h3>
+          <p>Discipline, confidence, and respect taught through age-appropriate training in a safe environment.</p>
+          <ul>
+            <li>Ages 6–14</li>
+            <li>Safe &amp; structured</li>
+            <li>Fundamentals first</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="background:#111">
+  <div class="container">
+    <div class="section-label">Gallery</div>
+    <h2>Life on the mats</h2>
+    <p class="section-sub">BJJ, Muay Thai, and kids classes — real training, real energy.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item wide">
+        <img src="martial-images/bjj3.jpg" alt="No-gi BJJ training" loading="lazy">
+        <div class="cap">No-gi / live training</div>
+      </div>
+      <div class="gallery-item">
+        <img src="martial-images/mt1.jpg" alt="Muay Thai pad work" loading="lazy">
+        <div class="cap">Pad work</div>
+      </div>
+      <div class="gallery-item">
+        <img src="martial-images/mt3.jpg" alt="Muay Thai kick technique" loading="lazy">
+        <div class="cap">Striking power</div>
+      </div>
+      <div class="gallery-item">
+        <img src="martial-images/bjj2.jpg" alt="Women training BJJ" loading="lazy">
+        <div class="cap">All levels on the mat</div>
+      </div>
+      <div class="gallery-item">
+        <img src="martial-images/yt1.jpg" alt="Kids grappling in gi" loading="lazy">
+        <div class="cap">Youth fundamentals</div>
+      </div>
+      <div class="gallery-item wide">
+        <img src="martial-images/mt4.jpg" alt="Kids Muay Thai with coach holding pads" loading="lazy">
+        <div class="cap">Kids striking with coaches</div>
+      </div>
+      <div class="gallery-item">
+        <img src="martial-images/yt3.jpg" alt="Kids BJJ competition-style rolling" loading="lazy">
+        <div class="cap">Kids rolling</div>
+      </div>
+      <div class="gallery-item">
+        <img src="martial-images/yt4.jpg" alt="Coach helping kids with technique" loading="lazy">
+        <div class="cap">Coached technique</div>
       </div>
     </div>
   </div>
 </section>
+
+<div class="train-strip">
+  <div class="train-photo" style="background-image:url('martial-images/bjj1.jpg')"></div>
+  <div class="train-copy">
+    <div class="section-label">The culture</div>
+    <h2 style="margin-bottom:16px">Show up. Put the work in.</h2>
+    <p>We don’t do gimmicks. Classes are structured, coaching is direct, and progress comes from consistency — not shortcuts.</p>
+    <p>Whether you’re here for fitness, self-defense, or competition, the standard is the same: train with intent.</p>
+    <a href="#contact" class="btn" style="margin-top:8px;align-self:flex-start">Start Free Trial</a>
+  </div>
+</div>
 
 <section id="schedule" class="schedule">
   <div class="container">
